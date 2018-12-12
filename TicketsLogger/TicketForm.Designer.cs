@@ -33,6 +33,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffNames = new System.Windows.Forms.ToolStripMenuItem();
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,11 +74,11 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.recTxtUnit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.recTxtFloorNo = new System.Windows.Forms.TextBox();
             this.recTxtBuilding = new System.Windows.Forms.TextBox();
-            this.recTxtAddress = new System.Windows.Forms.TextBox();
+            this.recTxtDept = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
@@ -85,7 +86,6 @@
             this.recRadRequest = new System.Windows.Forms.RadioButton();
             this.recRadIncident = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.LocateBtnExit = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -142,7 +142,6 @@
             this.panel9.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -179,6 +178,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alwaysOnTopToolStripMenuItem,
             this.logOutToolStripMenuItem1,
+            this.viewLogsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -190,7 +190,7 @@
             this.alwaysOnTopToolStripMenuItem.BackColor = System.Drawing.Color.RoyalBlue;
             this.alwaysOnTopToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.alwaysOnTopToolStripMenuItem.Text = "Always OnTop";
             // 
             // logOutToolStripMenuItem1
@@ -198,16 +198,24 @@
             this.logOutToolStripMenuItem1.BackColor = System.Drawing.Color.RoyalBlue;
             this.logOutToolStripMenuItem1.ForeColor = System.Drawing.Color.Red;
             this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
-            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(178, 26);
             this.logOutToolStripMenuItem1.Text = "Log Out";
             this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
+            // 
+            // viewLogsToolStripMenuItem
+            // 
+            this.viewLogsToolStripMenuItem.BackColor = System.Drawing.Color.RoyalBlue;
+            this.viewLogsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewLogsToolStripMenuItem.Name = "viewLogsToolStripMenuItem";
+            this.viewLogsToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.viewLogsToolStripMenuItem.Text = "View Logs";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.BackColor = System.Drawing.Color.RoyalBlue;
             this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -229,7 +237,7 @@
             this.viewProfileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.viewProfileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewProfileToolStripMenuItem.Image")));
             this.viewProfileToolStripMenuItem.Name = "viewProfileToolStripMenuItem";
-            this.viewProfileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.viewProfileToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.viewProfileToolStripMenuItem.Text = "View Profile";
             // 
             // changePasswordToolStripMenuItem
@@ -238,8 +246,8 @@
             this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.changePasswordToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("changePasswordToolStripMenuItem.Image")));
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.changePasswordToolStripMenuItem.Text = "Request Change of Password";
             // 
             // panel1
             // 
@@ -302,7 +310,7 @@
             this.panel8.Controls.Add(this.label34);
             this.panel8.Controls.Add(this.recTxtCallDescription);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 532);
+            this.panel8.Location = new System.Drawing.Point(0, 540);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1301, 143);
@@ -311,26 +319,29 @@
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(379, 11);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(591, 24);
+            this.label35.Size = new System.Drawing.Size(565, 23);
             this.label35.TabIndex = 2;
-            this.label35.Text = "NOT less than 20 characters, and NOT more than 1000characters";
+            this.label35.Text = "NOT less than 20 characters, and NOT more than 1000 characters";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(27, 11);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(199, 24);
+            this.label34.Size = new System.Drawing.Size(223, 24);
             this.label34.TabIndex = 1;
             this.label34.Text = "Description of a call: ";
             // 
             // recTxtCallDescription
             // 
             this.recTxtCallDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.recTxtCallDescription.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recTxtCallDescription.Location = new System.Drawing.Point(32, 38);
             this.recTxtCallDescription.Margin = new System.Windows.Forms.Padding(4);
             this.recTxtCallDescription.Multiline = true;
@@ -341,6 +352,7 @@
             // recComboPriority
             // 
             this.recComboPriority.BackColor = System.Drawing.SystemColors.Control;
+            this.recComboPriority.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recComboPriority.FormattingEnabled = true;
             this.recComboPriority.Items.AddRange(new object[] {
             "High",
@@ -349,7 +361,7 @@
             this.recComboPriority.Location = new System.Drawing.Point(941, 470);
             this.recComboPriority.Margin = new System.Windows.Forms.Padding(4);
             this.recComboPriority.Name = "recComboPriority";
-            this.recComboPriority.Size = new System.Drawing.Size(324, 32);
+            this.recComboPriority.Size = new System.Drawing.Size(324, 30);
             this.recComboPriority.TabIndex = 4;
             this.recComboPriority.Text = "Choose";
             // 
@@ -359,15 +371,16 @@
             this.panel3.Controls.Add(this.RecBtnClear);
             this.panel3.Controls.Add(this.RecBtnExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 675);
+            this.panel3.Location = new System.Drawing.Point(0, 683);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1301, 70);
+            this.panel3.Size = new System.Drawing.Size(1301, 62);
             this.panel3.TabIndex = 10;
             // 
             // RecBtnSave
             // 
             this.RecBtnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.RecBtnSave.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecBtnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RecBtnSave.Location = new System.Drawing.Point(800, 11);
             this.RecBtnSave.Margin = new System.Windows.Forms.Padding(4);
@@ -376,13 +389,15 @@
             this.RecBtnSave.TabIndex = 8;
             this.RecBtnSave.Text = "Save";
             this.RecBtnSave.UseVisualStyleBackColor = false;
+            this.RecBtnSave.Click += new System.EventHandler(this.RecBtnSave_Click);
             // 
             // RecBtnClear
             // 
             this.RecBtnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RecBtnClear.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.RecBtnClear.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecBtnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.RecBtnClear.Location = new System.Drawing.Point(966, 11);
+            this.RecBtnClear.Location = new System.Drawing.Point(964, 11);
             this.RecBtnClear.Margin = new System.Windows.Forms.Padding(4);
             this.RecBtnClear.Name = "RecBtnClear";
             this.RecBtnClear.Size = new System.Drawing.Size(156, 42);
@@ -394,8 +409,9 @@
             // 
             this.RecBtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RecBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.RecBtnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecBtnExit.ForeColor = System.Drawing.SystemColors.Info;
-            this.RecBtnExit.Location = new System.Drawing.Point(1130, 10);
+            this.RecBtnExit.Location = new System.Drawing.Point(1128, 10);
             this.RecBtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.RecBtnExit.Name = "RecBtnExit";
             this.RecBtnExit.Size = new System.Drawing.Size(156, 42);
@@ -407,11 +423,12 @@
             // recComboAssignedTo
             // 
             this.recComboAssignedTo.BackColor = System.Drawing.SystemColors.Control;
+            this.recComboAssignedTo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recComboAssignedTo.FormattingEnabled = true;
             this.recComboAssignedTo.Location = new System.Drawing.Point(941, 414);
             this.recComboAssignedTo.Margin = new System.Windows.Forms.Padding(4);
             this.recComboAssignedTo.Name = "recComboAssignedTo";
-            this.recComboAssignedTo.Size = new System.Drawing.Size(324, 32);
+            this.recComboAssignedTo.Size = new System.Drawing.Size(324, 30);
             this.recComboAssignedTo.TabIndex = 3;
             this.recComboAssignedTo.Text = "Choose";
             // 
@@ -446,16 +463,18 @@
             this.recComboUnikNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.recComboUnikNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.recComboUnikNo.BackColor = System.Drawing.SystemColors.Control;
+            this.recComboUnikNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recComboUnikNo.FormattingEnabled = true;
             this.recComboUnikNo.Location = new System.Drawing.Point(273, 11);
             this.recComboUnikNo.Margin = new System.Windows.Forms.Padding(4);
             this.recComboUnikNo.Name = "recComboUnikNo";
-            this.recComboUnikNo.Size = new System.Drawing.Size(213, 32);
+            this.recComboUnikNo.Size = new System.Drawing.Size(213, 30);
             this.recComboUnikNo.TabIndex = 10;
             // 
             // label53
             // 
             this.label53.BackColor = System.Drawing.Color.Transparent;
+            this.label53.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.Location = new System.Drawing.Point(17, 10);
             this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label53.Name = "label53";
@@ -467,6 +486,7 @@
             // recBtnSearch
             // 
             this.recBtnSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.recBtnSearch.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recBtnSearch.Location = new System.Drawing.Point(498, 0);
             this.recBtnSearch.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.recBtnSearch.Name = "recBtnSearch";
@@ -481,6 +501,7 @@
             this.groupBox11.BackColor = System.Drawing.Color.Transparent;
             this.groupBox11.Controls.Add(this.panel11);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(4, 63);
             this.groupBox11.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox11.Name = "groupBox11";
@@ -511,57 +532,63 @@
             // 
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.Color.Transparent;
+            this.label43.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.Location = new System.Drawing.Point(40, 178);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(161, 24);
+            this.label43.Size = new System.Drawing.Size(154, 23);
             this.label43.TabIndex = 1;
             this.label43.Text = "Contact Number:";
             // 
             // recTxtContactNo
             // 
+            this.recTxtContactNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recTxtContactNo.Location = new System.Drawing.Point(269, 175);
             this.recTxtContactNo.Margin = new System.Windows.Forms.Padding(4);
             this.recTxtContactNo.Name = "recTxtContactNo";
             this.recTxtContactNo.ReadOnly = true;
-            this.recTxtContactNo.Size = new System.Drawing.Size(324, 32);
+            this.recTxtContactNo.Size = new System.Drawing.Size(324, 30);
             this.recTxtContactNo.TabIndex = 0;
             // 
             // recTxtSurname
             // 
+            this.recTxtSurname.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recTxtSurname.Location = new System.Drawing.Point(269, 71);
             this.recTxtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.recTxtSurname.Name = "recTxtSurname";
             this.recTxtSurname.ReadOnly = true;
-            this.recTxtSurname.Size = new System.Drawing.Size(324, 32);
+            this.recTxtSurname.Size = new System.Drawing.Size(324, 30);
             this.recTxtSurname.TabIndex = 2;
             // 
             // recTxtName
             // 
+            this.recTxtName.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recTxtName.Location = new System.Drawing.Point(269, 14);
             this.recTxtName.Margin = new System.Windows.Forms.Padding(13, 25, 13, 25);
             this.recTxtName.Name = "recTxtName";
             this.recTxtName.ReadOnly = true;
-            this.recTxtName.Size = new System.Drawing.Size(324, 32);
+            this.recTxtName.Size = new System.Drawing.Size(324, 30);
             this.recTxtName.TabIndex = 3;
             // 
             // recTxtEmail
             // 
+            this.recTxtEmail.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recTxtEmail.Location = new System.Drawing.Point(269, 124);
             this.recTxtEmail.Margin = new System.Windows.Forms.Padding(13, 25, 13, 25);
             this.recTxtEmail.Name = "recTxtEmail";
             this.recTxtEmail.ReadOnly = true;
-            this.recTxtEmail.Size = new System.Drawing.Size(324, 32);
+            this.recTxtEmail.Size = new System.Drawing.Size(324, 30);
             this.recTxtEmail.TabIndex = 6;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.Location = new System.Drawing.Point(40, 128);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(66, 24);
+            this.label46.Size = new System.Drawing.Size(62, 23);
             this.label46.TabIndex = 2;
             this.label46.Text = "Email:";
             // 
@@ -569,10 +596,11 @@
             // 
             this.label45.AutoSize = true;
             this.label45.BackColor = System.Drawing.Color.Transparent;
+            this.label45.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.Location = new System.Drawing.Point(40, 75);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(102, 24);
+            this.label45.Size = new System.Drawing.Size(99, 23);
             this.label45.TabIndex = 1;
             this.label45.Text = "Surname: ";
             // 
@@ -580,20 +608,22 @@
             // 
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.Color.Transparent;
+            this.label44.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(40, 17);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(69, 24);
+            this.label44.Size = new System.Drawing.Size(66, 23);
             this.label44.TabIndex = 0;
             this.label44.Text = "Name:";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(720, 474);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(80, 24);
+            this.label33.Size = new System.Drawing.Size(74, 23);
             this.label33.TabIndex = 2;
             this.label33.Text = "Priority:";
             // 
@@ -620,7 +650,7 @@
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label31.Location = new System.Drawing.Point(437, 0);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -633,10 +663,11 @@
             // label32
             // 
             this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(720, 417);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(131, 24);
+            this.label32.Size = new System.Drawing.Size(124, 23);
             this.label32.TabIndex = 1;
             this.label32.Text = "Assigned To: ";
             // 
@@ -663,6 +694,7 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.panel9);
+            this.groupBox10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(4, 63);
             this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox10.Name = "groupBox10";
@@ -675,78 +707,85 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.textBox1);
+            this.panel9.Controls.Add(this.recTxtUnit);
             this.panel9.Controls.Add(this.label1);
             this.panel9.Controls.Add(this.recTxtFloorNo);
             this.panel9.Controls.Add(this.recTxtBuilding);
-            this.panel9.Controls.Add(this.recTxtAddress);
+            this.panel9.Controls.Add(this.recTxtDept);
             this.panel9.Controls.Add(this.label42);
             this.panel9.Controls.Add(this.label37);
             this.panel9.Controls.Add(this.label38);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel9.Location = new System.Drawing.Point(4, 29);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(597, 229);
             this.panel9.TabIndex = 2;
             // 
-            // textBox1
+            // recTxtUnit
             // 
-            this.textBox1.Location = new System.Drawing.Point(257, 72);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(321, 31);
-            this.textBox1.TabIndex = 11;
+            this.recTxtUnit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recTxtUnit.Location = new System.Drawing.Point(257, 72);
+            this.recTxtUnit.Margin = new System.Windows.Forms.Padding(4);
+            this.recTxtUnit.Multiline = true;
+            this.recTxtUnit.Name = "recTxtUnit";
+            this.recTxtUnit.ReadOnly = true;
+            this.recTxtUnit.Size = new System.Drawing.Size(321, 31);
+            this.recTxtUnit.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(33, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 24);
+            this.label1.Size = new System.Drawing.Size(50, 23);
             this.label1.TabIndex = 10;
             this.label1.Text = "Unit:";
             // 
             // recTxtFloorNo
             // 
+            this.recTxtFloorNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recTxtFloorNo.Location = new System.Drawing.Point(257, 169);
             this.recTxtFloorNo.Margin = new System.Windows.Forms.Padding(4);
             this.recTxtFloorNo.Name = "recTxtFloorNo";
             this.recTxtFloorNo.ReadOnly = true;
-            this.recTxtFloorNo.Size = new System.Drawing.Size(324, 32);
+            this.recTxtFloorNo.Size = new System.Drawing.Size(324, 30);
             this.recTxtFloorNo.TabIndex = 9;
             // 
             // recTxtBuilding
             // 
+            this.recTxtBuilding.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recTxtBuilding.Location = new System.Drawing.Point(257, 124);
             this.recTxtBuilding.Margin = new System.Windows.Forms.Padding(4);
             this.recTxtBuilding.Name = "recTxtBuilding";
             this.recTxtBuilding.ReadOnly = true;
-            this.recTxtBuilding.Size = new System.Drawing.Size(324, 32);
+            this.recTxtBuilding.Size = new System.Drawing.Size(324, 30);
             this.recTxtBuilding.TabIndex = 4;
             // 
-            // recTxtAddress
+            // recTxtDept
             // 
-            this.recTxtAddress.Location = new System.Drawing.Point(257, 21);
-            this.recTxtAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.recTxtAddress.Multiline = true;
-            this.recTxtAddress.Name = "recTxtAddress";
-            this.recTxtAddress.ReadOnly = true;
-            this.recTxtAddress.Size = new System.Drawing.Size(321, 31);
-            this.recTxtAddress.TabIndex = 8;
+            this.recTxtDept.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recTxtDept.Location = new System.Drawing.Point(257, 21);
+            this.recTxtDept.Margin = new System.Windows.Forms.Padding(4);
+            this.recTxtDept.Multiline = true;
+            this.recTxtDept.Name = "recTxtDept";
+            this.recTxtDept.ReadOnly = true;
+            this.recTxtDept.Size = new System.Drawing.Size(321, 31);
+            this.recTxtDept.TabIndex = 8;
             // 
             // label42
             // 
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
+            this.label42.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(33, 124);
             this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(88, 24);
+            this.label42.Size = new System.Drawing.Size(84, 23);
             this.label42.TabIndex = 7;
             this.label42.Text = "Building:";
             // 
@@ -754,10 +793,11 @@
             // 
             this.label37.AutoSize = true;
             this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Location = new System.Drawing.Point(33, 173);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(137, 24);
+            this.label37.Size = new System.Drawing.Size(132, 23);
             this.label37.TabIndex = 1;
             this.label37.Text = "Floor Number:";
             // 
@@ -765,10 +805,11 @@
             // 
             this.label38.AutoSize = true;
             this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.Location = new System.Drawing.Point(33, 24);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(124, 24);
+            this.label38.Size = new System.Drawing.Size(117, 23);
             this.label38.TabIndex = 1;
             this.label38.Text = "Department:";
             // 
@@ -776,6 +817,7 @@
             // 
             this.groupBox7.Controls.Add(this.recRadRequest);
             this.groupBox7.Controls.Add(this.recRadIncident);
+            this.groupBox7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(32, 385);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
@@ -788,10 +830,11 @@
             // recRadRequest
             // 
             this.recRadRequest.AutoSize = true;
+            this.recRadRequest.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recRadRequest.Location = new System.Drawing.Point(275, 32);
             this.recRadRequest.Margin = new System.Windows.Forms.Padding(4);
             this.recRadRequest.Name = "recRadRequest";
-            this.recRadRequest.Size = new System.Drawing.Size(103, 28);
+            this.recRadRequest.Size = new System.Drawing.Size(99, 27);
             this.recRadRequest.TabIndex = 1;
             this.recRadRequest.TabStop = true;
             this.recRadRequest.Text = "Request";
@@ -801,10 +844,11 @@
             // 
             this.recRadIncident.AutoSize = true;
             this.recRadIncident.Checked = true;
+            this.recRadIncident.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recRadIncident.Location = new System.Drawing.Point(27, 32);
             this.recRadIncident.Margin = new System.Windows.Forms.Padding(4);
             this.recRadIncident.Name = "recRadIncident";
-            this.recRadIncident.Size = new System.Drawing.Size(103, 28);
+            this.recRadIncident.Size = new System.Drawing.Size(100, 27);
             this.recRadIncident.TabIndex = 0;
             this.recRadIncident.TabStop = true;
             this.recRadIncident.Text = "Incident";
@@ -813,7 +857,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.tableLayoutPanel6);
+            this.tabPage2.Controls.Add(this.LocateBtnExit);
             this.tabPage2.Controls.Add(this.tableLayoutPanel5);
             this.tabPage2.Controls.Add(this.tableLayoutPanel4);
             this.tabPage2.Controls.Add(this.tableLayoutPanel3);
@@ -825,31 +869,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Locate Call";
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.58648F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.41352F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel6.Controls.Add(this.LocateBtnExit, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 699);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1301, 50);
-            this.tableLayoutPanel6.TabIndex = 12;
-            // 
             // LocateBtnExit
             // 
             this.LocateBtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LocateBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.LocateBtnExit.Location = new System.Drawing.Point(1156, 4);
+            this.LocateBtnExit.Location = new System.Drawing.Point(1144, 703);
             this.LocateBtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.LocateBtnExit.Name = "LocateBtnExit";
-            this.LocateBtnExit.Size = new System.Drawing.Size(141, 42);
+            this.LocateBtnExit.Size = new System.Drawing.Size(156, 42);
             this.LocateBtnExit.TabIndex = 9;
             this.LocateBtnExit.Text = "Exit";
             this.LocateBtnExit.UseVisualStyleBackColor = false;
@@ -950,6 +977,7 @@
             this.locBtnShowAll.TabIndex = 1;
             this.locBtnShowAll.Text = "Show all";
             this.locBtnShowAll.UseVisualStyleBackColor = true;
+            this.locBtnShowAll.Click += new System.EventHandler(this.locBtnShowAll_Click);
             // 
             // LocBtnContinue
             // 
@@ -958,8 +986,9 @@
             this.LocBtnContinue.Name = "LocBtnContinue";
             this.LocBtnContinue.Size = new System.Drawing.Size(124, 33);
             this.LocBtnContinue.TabIndex = 2;
-            this.LocBtnContinue.Text = "Continue";
+            this.LocBtnContinue.Text = "Show";
             this.LocBtnContinue.UseVisualStyleBackColor = true;
+            this.LocBtnContinue.Click += new System.EventHandler(this.LocBtnContinue_Click);
             // 
             // label18
             // 
@@ -995,7 +1024,7 @@
             this.label17.AutoSize = true;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Enabled = false;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label17.Location = new System.Drawing.Point(437, 0);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1028,18 +1057,19 @@
             this.panel2.Location = new System.Drawing.Point(20, 694);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1279, 52);
+            this.panel2.Size = new System.Drawing.Size(1277, 55);
             this.panel2.TabIndex = 3;
             // 
             // closeBtnExit
             // 
             this.closeBtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.closeBtnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.closeBtnExit.Location = new System.Drawing.Point(1101, 5);
+            this.closeBtnExit.Location = new System.Drawing.Point(1099, 8);
             this.closeBtnExit.Margin = new System.Windows.Forms.Padding(4);
             this.closeBtnExit.Name = "closeBtnExit";
-            this.closeBtnExit.Size = new System.Drawing.Size(171, 41);
+            this.closeBtnExit.Size = new System.Drawing.Size(156, 42);
             this.closeBtnExit.TabIndex = 2;
             this.closeBtnExit.Text = "Exit";
             this.closeBtnExit.UseVisualStyleBackColor = false;
@@ -1049,10 +1079,11 @@
             // 
             this.closeBtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.closeBtnSave.Location = new System.Drawing.Point(924, 5);
+            this.closeBtnSave.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtnSave.Location = new System.Drawing.Point(922, 8);
             this.closeBtnSave.Margin = new System.Windows.Forms.Padding(4);
             this.closeBtnSave.Name = "closeBtnSave";
-            this.closeBtnSave.Size = new System.Drawing.Size(169, 41);
+            this.closeBtnSave.Size = new System.Drawing.Size(156, 42);
             this.closeBtnSave.TabIndex = 0;
             this.closeBtnSave.Text = "Save";
             this.closeBtnSave.UseVisualStyleBackColor = false;
@@ -1075,6 +1106,7 @@
             this.groupBox14.Controls.Add(this.label52);
             this.groupBox14.Controls.Add(this.groupBox15);
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
             this.groupBox14.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox14.Name = "groupBox14";
@@ -1087,20 +1119,22 @@
             // closeTxtMessage
             // 
             this.closeTxtMessage.BackColor = System.Drawing.SystemColors.Control;
+            this.closeTxtMessage.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeTxtMessage.Location = new System.Drawing.Point(16, 151);
             this.closeTxtMessage.Margin = new System.Windows.Forms.Padding(4);
             this.closeTxtMessage.Multiline = true;
             this.closeTxtMessage.Name = "closeTxtMessage";
-            this.closeTxtMessage.Size = new System.Drawing.Size(1235, 100);
+            this.closeTxtMessage.Size = new System.Drawing.Size(1277, 100);
             this.closeTxtMessage.TabIndex = 9;
             // 
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(323, 124);
+            this.label51.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(336, 126);
             this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(603, 24);
+            this.label51.Size = new System.Drawing.Size(569, 23);
             this.label51.TabIndex = 2;
             this.label51.Text = "NOT less than 20 Characters and NOT more than a 100 Characters";
             // 
@@ -1110,7 +1144,7 @@
             this.label52.Location = new System.Drawing.Point(11, 124);
             this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(230, 24);
+            this.label52.Size = new System.Drawing.Size(258, 24);
             this.label52.TabIndex = 1;
             this.label52.Text = "Close/Escalate Message:";
             // 
@@ -1130,10 +1164,11 @@
             // closeRadEscalate
             // 
             this.closeRadEscalate.AutoSize = true;
+            this.closeRadEscalate.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeRadEscalate.Location = new System.Drawing.Point(236, 32);
             this.closeRadEscalate.Margin = new System.Windows.Forms.Padding(4);
             this.closeRadEscalate.Name = "closeRadEscalate";
-            this.closeRadEscalate.Size = new System.Drawing.Size(105, 28);
+            this.closeRadEscalate.Size = new System.Drawing.Size(99, 27);
             this.closeRadEscalate.TabIndex = 1;
             this.closeRadEscalate.Text = "Escalate";
             this.closeRadEscalate.UseVisualStyleBackColor = true;
@@ -1142,10 +1177,11 @@
             // 
             this.closeRadClose.AutoSize = true;
             this.closeRadClose.Checked = true;
+            this.closeRadClose.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeRadClose.Location = new System.Drawing.Point(8, 32);
             this.closeRadClose.Margin = new System.Windows.Forms.Padding(4);
             this.closeRadClose.Name = "closeRadClose";
-            this.closeRadClose.Size = new System.Drawing.Size(79, 28);
+            this.closeRadClose.Size = new System.Drawing.Size(74, 27);
             this.closeRadClose.TabIndex = 0;
             this.closeRadClose.TabStop = true;
             this.closeRadClose.Text = "Close";
@@ -1169,15 +1205,17 @@
             this.closeComboUnikNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.closeComboUnikNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.closeComboUnikNo.BackColor = System.Drawing.SystemColors.Control;
+            this.closeComboUnikNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeComboUnikNo.FormattingEnabled = true;
             this.closeComboUnikNo.Location = new System.Drawing.Point(244, 14);
             this.closeComboUnikNo.Margin = new System.Windows.Forms.Padding(4);
             this.closeComboUnikNo.Name = "closeComboUnikNo";
-            this.closeComboUnikNo.Size = new System.Drawing.Size(364, 32);
+            this.closeComboUnikNo.Size = new System.Drawing.Size(364, 30);
             this.closeComboUnikNo.TabIndex = 9;
             // 
             // closeBtnSearch
             // 
+            this.closeBtnSearch.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtnSearch.Location = new System.Drawing.Point(653, 14);
             this.closeBtnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.closeBtnSearch.Name = "closeBtnSearch";
@@ -1189,10 +1227,11 @@
             // label54
             // 
             this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.Location = new System.Drawing.Point(11, 14);
             this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(155, 24);
+            this.label54.Size = new System.Drawing.Size(150, 23);
             this.label54.TabIndex = 1;
             this.label54.Text = "Unique Number:";
             // 
@@ -1206,12 +1245,12 @@
             this.groupBox16.Controls.Add(this.closeTxtType);
             this.groupBox16.Controls.Add(this.label57);
             this.groupBox16.Controls.Add(this.label58);
-            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox16.Location = new System.Drawing.Point(0, 56);
+            this.groupBox16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.Location = new System.Drawing.Point(0, 59);
             this.groupBox16.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox16.Size = new System.Drawing.Size(1301, 314);
+            this.groupBox16.Size = new System.Drawing.Size(1297, 311);
             this.groupBox16.TabIndex = 0;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Client Information";
@@ -1223,73 +1262,80 @@
             this.closeTxtDescription.Multiline = true;
             this.closeTxtDescription.Name = "closeTxtDescription";
             this.closeTxtDescription.ReadOnly = true;
-            this.closeTxtDescription.Size = new System.Drawing.Size(1235, 96);
+            this.closeTxtDescription.Size = new System.Drawing.Size(1272, 96);
             this.closeTxtDescription.TabIndex = 8;
             // 
             // closeTxtAssignedTo
             // 
+            this.closeTxtAssignedTo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeTxtAssignedTo.Location = new System.Drawing.Point(896, 91);
             this.closeTxtAssignedTo.Margin = new System.Windows.Forms.Padding(4);
             this.closeTxtAssignedTo.Name = "closeTxtAssignedTo";
             this.closeTxtAssignedTo.ReadOnly = true;
-            this.closeTxtAssignedTo.Size = new System.Drawing.Size(355, 32);
+            this.closeTxtAssignedTo.Size = new System.Drawing.Size(392, 30);
             this.closeTxtAssignedTo.TabIndex = 7;
             // 
             // label55
             // 
             this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.Location = new System.Drawing.Point(693, 95);
             this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(125, 24);
+            this.label55.Size = new System.Drawing.Size(118, 23);
             this.label55.TabIndex = 6;
             this.label55.Text = "Assigned To:";
             // 
             // closeTxtAssignedBy
             // 
+            this.closeTxtAssignedBy.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeTxtAssignedBy.Location = new System.Drawing.Point(896, 38);
             this.closeTxtAssignedBy.Margin = new System.Windows.Forms.Padding(4);
             this.closeTxtAssignedBy.Name = "closeTxtAssignedBy";
             this.closeTxtAssignedBy.ReadOnly = true;
-            this.closeTxtAssignedBy.Size = new System.Drawing.Size(355, 32);
+            this.closeTxtAssignedBy.Size = new System.Drawing.Size(392, 30);
             this.closeTxtAssignedBy.TabIndex = 6;
             // 
             // label56
             // 
             this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.Location = new System.Drawing.Point(693, 42);
             this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(123, 24);
+            this.label56.Size = new System.Drawing.Size(117, 23);
             this.label56.TabIndex = 5;
             this.label56.Text = "Assigned by:";
             // 
             // closeTxtType
             // 
+            this.closeTxtType.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeTxtType.Location = new System.Drawing.Point(244, 38);
             this.closeTxtType.Margin = new System.Windows.Forms.Padding(4);
             this.closeTxtType.Name = "closeTxtType";
             this.closeTxtType.ReadOnly = true;
-            this.closeTxtType.Size = new System.Drawing.Size(364, 32);
+            this.closeTxtType.Size = new System.Drawing.Size(364, 30);
             this.closeTxtType.TabIndex = 5;
             // 
             // label57
             // 
             this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.Location = new System.Drawing.Point(11, 156);
             this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(117, 24);
+            this.label57.Size = new System.Drawing.Size(110, 23);
             this.label57.TabIndex = 4;
             this.label57.Text = "Description:";
             // 
             // label58
             // 
             this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label58.Location = new System.Drawing.Point(11, 42);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(61, 24);
+            this.label58.Size = new System.Drawing.Size(58, 23);
             this.label58.TabIndex = 3;
             this.label58.Text = "Type:";
             // 
@@ -1309,12 +1355,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.ForeColor = System.Drawing.Color.White;
-            this.label60.Location = new System.Drawing.Point(463, 18);
+            this.label60.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label60.Location = new System.Drawing.Point(463, 9);
             this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(405, 29);
+            this.label60.Size = new System.Drawing.Size(477, 34);
             this.label60.TabIndex = 0;
             this.label60.Text = "Close/Escale incident or Request";
             // 
@@ -1326,6 +1372,7 @@
             this.ClientSize = new System.Drawing.Size(1317, 818);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "TicketForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1355,7 +1402,6 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1428,11 +1474,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox recTxtUnit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox recTxtFloorNo;
         private System.Windows.Forms.TextBox recTxtBuilding;
-        private System.Windows.Forms.TextBox recTxtAddress;
+        private System.Windows.Forms.TextBox recTxtDept;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
@@ -1440,7 +1486,6 @@
         private System.Windows.Forms.RadioButton recRadRequest;
         private System.Windows.Forms.RadioButton recRadIncident;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button LocateBtnExit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -1480,5 +1525,6 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.ToolStripMenuItem viewLogsToolStripMenuItem;
     }
 }

@@ -86,6 +86,7 @@ namespace TicketsLogger
                                 };
                                 TicketForm ticketFrm= new TicketForm();
                                 ticketFrm.Show();
+
                                 this.Hide();
                             }
                             else if (table.Rows[0]["role"].ToString().Equals("user", StringComparison.CurrentCultureIgnoreCase))

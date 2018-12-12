@@ -14,5 +14,10 @@ namespace TicketsLogger
         public string Email;
         public string Password;
         public string Role;
+        public string Department;
+        public string Unit;
+        public string Building;
+        public string Floor;
+
     }
 }
