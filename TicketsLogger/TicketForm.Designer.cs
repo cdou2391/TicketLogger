@@ -1283,11 +1283,11 @@
             this.groupBox16.Controls.Add(this.label57);
             this.groupBox16.Controls.Add(this.label58);
             this.groupBox16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(0, 59);
+            this.groupBox16.Location = new System.Drawing.Point(8, 59);
             this.groupBox16.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox16.Size = new System.Drawing.Size(1296, 311);
+            this.groupBox16.Size = new System.Drawing.Size(1288, 303);
             this.groupBox16.TabIndex = 0;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Client Information";
@@ -1332,7 +1332,7 @@
             this.closeTxtAssignedBy.Margin = new System.Windows.Forms.Padding(4);
             this.closeTxtAssignedBy.Name = "closeTxtAssignedBy";
             this.closeTxtAssignedBy.ReadOnly = true;
-            this.closeTxtAssignedBy.Size = new System.Drawing.Size(392, 30);
+            this.closeTxtAssignedBy.Size = new System.Drawing.Size(384, 30);
             this.closeTxtAssignedBy.TabIndex = 6;
             // 
             // label56

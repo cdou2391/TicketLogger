@@ -182,6 +182,7 @@ namespace TicketsLogger
             string callDateLogged = DateTime.Now.ToString();
             string callDateResolved = "Still in progress";
             string callAssignedBy = staffNames.Text;
+            string callDescription = recTxtCallDescription.Text;
 
             string techEmail = recComboAssignedTo.Text;
             string clientEmail = recTxtEmail.Text;
@@ -191,25 +192,69 @@ namespace TicketsLogger
             
             GenerateTicketNumber genTicket = new GenerateTicketNumber();
             string TicketNum = genTicket.getTicketNumber();
-
-            if (recRadIncident.Checked == true)
+            try
             {
-                callType = "Incident";
-                TicketNum = "I" + genTicket.getTicketNumber();
-            }
-            else
-            {
-                callType = "Request";
-                TicketNum = "R" + genTicket.getTicketNumber();
+                if (recRadIncident.Checked == true)
+                {
+                    callType = "Incident";
+                    TicketNum = "I" + genTicket.getTicketNumber();
+                }
+                else
+                {
+                    callType = "Request";
+                    TicketNum = "R" + genTicket.getTicketNumber();
+                }
+
+                if ((recTxtCallDescription.Text == "") || (recComboUnikNo.Text == "") || (recComboAssignedTo.Text == "Choose") || (recComboPriority.Text == "Choose")
+                   || (recComboAssignedTo.Text == "") || (recComboPriority.Text == ""))
+                {
+                    MessageBox.Show("Please fill in all the fields with the correct information");
+                }
+                else
+                {
+                    using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand("INSERT INTO Tickets(TicketNumber,Type,CreatedBy,Priority,Description,CreatedDate,Status,ClosedDate,AssignedTo) VALUES(@TicketNumber,@Type,@CreatedBy,@Priority,@Description,@CreatedDate,@Status,@ClosedDate,@AssignedTo) ", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@TicketNumber", TicketNum);
+                            cmd.Parameters.AddWithValue("@Type", callType);
+                            cmd.Parameters.AddWithValue("@AssignedTo", callAssignedTo);
+                            cmd.Parameters.AddWithValue("@CreatedBy", callAssignedBy);
+                            cmd.Parameters.AddWithValue("@Priority", callPriority);
+                            cmd.Parameters.AddWithValue("@Description", callDescription);
+                            cmd.Parameters.AddWithValue("@CreatedDate", callDateLogged);
+                            cmd.Parameters.AddWithValue("@Status", callStatus);
+                            cmd.Parameters.AddWithValue("@ClosedDate", callDateResolved);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    //LoadCalls();
+                    //string techEmail = recComboAssignedTo.Text;
+                    //string clientEmail = recTxtEmail.Text;
+                    //string clientNames = recTxtSurname.Text + " " + recTxtName.Text;
+                    //string callDesc = recTxtCallDescription.Text;
+                }
+
+                SendEmail sendE = new SendEmail();
+                void threadStart()
+                {
+                    sendE.sendEmail(Global.Staff.Email,
+                    techEmail, clientEmail, clientNames,
+                    callDesc, TicketNum, callType,
+                    callStatus, callPriority);
+                }
+                Thread thread = new Thread(threadStart);
+                thread.Start();
             }
 
-            SendEmail sendE = new SendEmail();
-            void threadStart() { sendE.sendEmail(Global.Staff.Email, 
-                                 techEmail, clientEmail, clientNames,
-                                 callDesc, TicketNum, callType, 
-                                 callStatus, callPriority); }
-            Thread thread = new Thread(threadStart);
-            thread.Start();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new LogWriter(ex);
+                this.Close();
+            }
         }
 
         private void LocBtnContinue_Click(object sender, EventArgs e)
@@ -242,7 +287,8 @@ namespace TicketsLogger
 
                                     for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
                                     {
-                                        string status = dataGridView1.Rows[rows].Cells[6].Value.ToString();
+                                        string status = dataGridView1.Rows[rows].Cells[5].Value.ToString();
+                                        MessageBox.Show(status);
                                         if (status == "Closed")
                                         {
                                             dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Yellow;
@@ -257,8 +303,9 @@ namespace TicketsLogger
                                         }
                                     }
                                 }
-                                catch (Exception)
+                                catch (Exception ex)
                                 {
+                                    new LogWriter(ex);
                                 }
                             }
                         }
