@@ -10,18 +10,6 @@ namespace TicketsLogger
 {
     class GenerateTicketNumber
     {
-        //string referenceNum;
-        //public string GetUniqueKey()
-        //{
-        //    using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand("SELECT COUNT(*) from Tickets", conn);
-        //        object count = cmd.ExecuteScalar();
-        //        referenceNum = (1000 + (Convert.ToInt32(count) + 1)).ToString();
-        //    }
-        //    return referenceNum;
-        //}
         string TicketsNumber;
         public string getTicketNumber()
         {

@@ -14,7 +14,9 @@ namespace TicketsLogger
 {
     class SendEmail
     {
-        public string sendEmail(string sender, string receiver1, string receiver2, string clientName, string callMessage, string referenceNum,string callType, string callStatus)
+        public string sendEmail(string sender, string receiver1, string receiver2, string clientName, 
+                                string callMessage, string referenceNum,string callType, string callStatus, 
+                                string callPriority)
         {
             string staff = sender;
             string tech = receiver1;
@@ -25,6 +27,7 @@ namespace TicketsLogger
             string callStat = callStatus;
             string refNum = referenceNum;
             string message = "";
+            string callPrior = callPriority;
 
             using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
             {
@@ -57,8 +60,8 @@ namespace TicketsLogger
                             string subject = "New Ticket";
                             string body;
                             body = ("You have been assigned a Ticket \r\nTicket Number: " + referenceNum 
-                                + "\r\nCall Type: " + callT +"\r\nCall Description: " + callDesc 
-                                + "\r\nCall Status: " + callStat);
+                                  + "\r\nCall Type: " + callT +"\r\nCall Description: " + callDesc 
+                                  + "\r\nCall Status: " + callStat + "\r\nCall Priority: "+ callPrior);
                             var smtp = new SmtpClient
                             {
                                 Host = "smtp.office365.com",

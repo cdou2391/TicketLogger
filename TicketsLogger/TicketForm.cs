@@ -10,6 +10,7 @@ using System.Net.Mail;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -50,7 +51,7 @@ namespace TicketsLogger
             }
             else
             {
-                MessageBox.Show("You are not going anywhere!");
+               
             }
         }
 
@@ -63,7 +64,7 @@ namespace TicketsLogger
             }
             else
             {
-                MessageBox.Show("You are not going anywhere!");
+                
             }
         }
 
@@ -187,12 +188,28 @@ namespace TicketsLogger
             string clientNames = recTxtSurname.Text + " " + recTxtName.Text;
             string callDesc = recTxtCallDescription.Text;
             string refNum = recComboUnikNo.Text;
+            
+            GenerateTicketNumber genTicket = new GenerateTicketNumber();
+            string TicketNum = genTicket.getTicketNumber();
 
-            GenerateTicketNumber genRef = new GenerateTicketNumber();
-            string TicketNum = genRef.getTicketNumber();
+            if (recRadIncident.Checked == true)
+            {
+                callType = "Incident";
+                TicketNum = "I" + genTicket.getTicketNumber();
+            }
+            else
+            {
+                callType = "Request";
+                TicketNum = "R" + genTicket.getTicketNumber();
+            }
 
             SendEmail sendE = new SendEmail();
-            string message = sendE.sendEmail(Global.Staff.Email, techEmail, clientEmail, clientNames, callDesc, TicketNum,callType,callStatus);
+            void threadStart() { sendE.sendEmail(Global.Staff.Email, 
+                                 techEmail, clientEmail, clientNames,
+                                 callDesc, TicketNum, callType, 
+                                 callStatus, callPriority); }
+            Thread thread = new Thread(threadStart);
+            thread.Start();
         }
 
         private void LocBtnContinue_Click(object sender, EventArgs e)
@@ -302,6 +319,100 @@ namespace TicketsLogger
                 catch (Exception)
                 {
                 }
+            }
+        }
+
+        private void closeBtnSearch_Click(object sender, EventArgs e)
+        {
+            string refNum = closeComboUnikNo.Text;
+            if (refNum.ToString().Length > 2)
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand("SELECT * from Tickets where TicketNumber='" + refNum + "'", conn))
+                        {
+                            SqlDataReader reader = cmd.ExecuteReader();
+                            reader.Read();
+                            closeTxtType.Text = reader["type"].ToString();
+                            closeTxtDescription.Text = reader["description"].ToString();
+                            closeTxtAssignedTo.Text = reader["AssignedTo"].ToString();
+                            closeTxtAssignedBy.Text = reader["CreatedBy"].ToString();
+
+                            reader.Close();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    new LogWriter(ex);
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid reference number");
+            }
+        }
+
+        private void closeRadEscalate_Click(object sender, EventArgs e)
+        {
+            escPnlEsclTo.Visible = true;
+        }
+
+        private void closeRadClose_Click(object sender, EventArgs e)
+        {
+            escPnlEsclTo.Visible = false;
+        }
+
+        private void closeBtnSave_Click(object sender, EventArgs e)
+        {
+            string status;
+            if (closeTxtMessage.Text == "")
+            {
+                MessageBox.Show("Please provide a message");
+            }
+            else
+            {
+                if (closeRadClose.Checked == true)
+                {
+                    status = "Closed";
+                }
+                else
+                {
+                    status = "Escalated";
+                }
+                string callStatus = status;
+                string statusDescription = closeTxtMessage.Text;
+                string callDateResolved;
+                string refNum = closeComboUnikNo.Text;
+                string escalatedTo = clsEscalatedTo.Text;
+                if (status == "Closed")
+                {
+                    callDateResolved = DateTime.Now.ToString();
+                }
+                else
+                {
+                    callDateResolved = "Still in progress";
+                }
+                using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("update Tickets set Status= @callStatus ,Description=@statusDescription, ClosedDate= @ClosedDate ,EscalatedTo= @escalatedTo where TicketNumber = '" + refNum + "'", conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@callStatus", callStatus);
+                        cmd.Parameters.AddWithValue("@ClosedDate", callDateResolved);
+                        cmd.Parameters.AddWithValue("@statusDescription", statusDescription);
+                        cmd.Parameters.AddWithValue("@escalatedTo", escalatedTo);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Call sucessfully " + status + "!");
             }
         }
     }
