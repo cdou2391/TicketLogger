@@ -12,7 +12,7 @@ namespace TicketsLogger
     {
         public string sendEmail(string sender, string receiver1, string receiver2, string clientName, 
                                 string callMessage, string referenceNum,string callType, string callStatus, 
-                                string callPriority)
+                                string callPriority,string introMsg)
         {
             string staff = sender;
             string tech = receiver1;
@@ -24,6 +24,7 @@ namespace TicketsLogger
             string refNum = referenceNum;
             string message = "";
             string callPrior = callPriority;
+            string msgIntro = introMsg;
 
             using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
             {
@@ -45,7 +46,7 @@ namespace TicketsLogger
                             //string orgEmail = "rugced23@gmail.com"; reader2["email"].ToString();
                             //var toAddress2 = new MailAddress(orgEmail, "From " + clientOrgName);
                             //var toAddress3 = new MailAddress(client, "From " + clientOrgName);
-                            var fromAddress = new MailAddress("crugamba@bk.rw", Global.Staff.Name + " " + Global.Staff.Surname);
+                            var fromAddress = new MailAddress(staff, Global.Staff.Name + " " + Global.Staff.Surname);
                             if (inputBox.InputBox("Password", "Enter password:", ref inputPassword) == DialogResult.OK)
                             {
                                 //MessageBox.Show(value);
@@ -55,7 +56,7 @@ namespace TicketsLogger
                             var toAddress = new MailAddress(tech, "");
                             string subject = "New Ticket";
                             string body;
-                            body = ("You have been assigned a Ticket \r\nTicket Number: " + referenceNum 
+                            body = (msgIntro+"\r\nTicket Number: " + referenceNum 
                                   + "\r\nCall Type: " + callT +"\r\nCall Description: " + callDesc 
                                   + "\r\nCall Status: " + callStat + "\r\nCall Priority: "+ callPrior);
                             var smtp = new SmtpClient

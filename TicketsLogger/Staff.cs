@@ -18,6 +18,7 @@ namespace TicketsLogger
         public string Unit;
         public string Building;
         public string Floor;
+        public string ID;
 
     }
 }

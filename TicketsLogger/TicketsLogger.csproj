@@ -34,6 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,9 +60,11 @@
     <Compile Include="GenerateTicketNumber.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="inputBox.cs" />
+    <Compile Include="loginLogs.cs" />
     <Compile Include="LogWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundButton.cs" />
     <Compile Include="SendEmail.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="TicketForm.cs">

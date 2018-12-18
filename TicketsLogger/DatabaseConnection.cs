@@ -10,7 +10,7 @@ namespace TicketsLogger
 {
     class DatabaseConnection
     {
-        public static string connectionStr = @"Data Source=DATACENTER03\CEDRICDB;Initial Catalog = TicketsDB; Integrated Security = True";
+        public static string connectionStr = @"Data Source=IT-CEDRIC\CEDRICDB;Initial Catalog = TicketsDB; Integrated Security = True";
         public static SqlConnection connection = new SqlConnection(connectionStr);
         public string checkDatabase()
         {

@@ -31,6 +31,7 @@ namespace TicketsLogger
             staffNames.Text = Global.Staff.Name + " " + Global.Staff.Surname;
             LoadStaffUser();
             LoadCalls();
+            this.Text =ProductName.ToString()+ " " + ProductVersion.ToString();
         }
 
         private void RecBtnExit_Click(object sender, EventArgs e)
@@ -180,7 +181,8 @@ namespace TicketsLogger
             string clientNames = recTxtSurname.Text + " " + recTxtName.Text;
             string callDesc = recTxtCallDescription.Text;
             string refNum = recComboUnikNo.Text;
-            
+
+            string emailMsg = "You have been assigned a new Ticket!";
             GenerateTicketNumber genTicket = new GenerateTicketNumber();
             string TicketNum = genTicket.getTicketNumber();
             try
@@ -219,6 +221,17 @@ namespace TicketsLogger
                             cmd.Parameters.AddWithValue("@ClosedDate", callDateResolved);
 
                             cmd.ExecuteNonQuery();
+
+                            SendEmail sendE = new SendEmail();
+                            void threadStart()
+                            {
+                                sendE.sendEmail(Global.Staff.Email,
+                                techEmail, clientEmail, clientNames,
+                                callDesc, TicketNum, callType,
+                                callStatus, callPriority, emailMsg);
+                            }
+                            Thread thread = new Thread(threadStart);
+                            thread.Start();
                         }
                     }
                     //LoadCalls();
@@ -228,16 +241,7 @@ namespace TicketsLogger
                     //string callDesc = recTxtCallDescription.Text;
                 }
 
-                SendEmail sendE = new SendEmail();
-                void threadStart()
-                {
-                    sendE.sendEmail(Global.Staff.Email,
-                    techEmail, clientEmail, clientNames,
-                    callDesc, TicketNum, callType,
-                    callStatus, callPriority);
-                }
-                Thread thread = new Thread(threadStart);
-                thread.Start();
+                
             }
 
             catch (Exception ex)
@@ -279,7 +283,6 @@ namespace TicketsLogger
                                     for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
                                     {
                                         string status = dataGridView1.Rows[rows].Cells[5].Value.ToString();
-                                        MessageBox.Show(status);
                                         if (status == "Closed")
                                         {
                                             dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Yellow;
@@ -426,8 +429,9 @@ namespace TicketsLogger
                 string callStatus = status;
                 string statusDescription = closeTxtMessage.Text;
                 string callDateResolved;
-                string refNum = closeComboUnikNo.Text;
+                string ticketNum = closeComboUnikNo.Text;
                 string escalatedTo = clsEscalatedTo.Text;
+                string callType = closeTxtType.Text;
                 if (status == "Closed")
                 {
                     callDateResolved = DateTime.Now.ToString();
@@ -439,8 +443,19 @@ namespace TicketsLogger
                 using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("update Tickets set Status= @callStatus ,Description=@statusDescription, ClosedDate= @ClosedDate ,EscalatedTo= @escalatedTo where TicketNumber = '" + refNum + "'", conn))
+                    using (SqlCommand cmd = new SqlCommand("update Tickets set Status= @callStatus ,Description=@statusDescription, ClosedDate= @ClosedDate ,EscalatedTo= @escalatedTo where TicketNumber = '" + ticketNum + "'", conn))
                     {
+                        SendEmail sendE = new SendEmail();
+                        string emailMsg = "The ticket has been " + callStatus;
+                        void threadStart()
+                        {
+                            sendE.sendEmail(Global.Staff.Email,
+                            escalatedTo, "", "",
+                            statusDescription, ticketNum, callType,
+                            callStatus, "", emailMsg);
+                        }
+                        Thread thread = new Thread(threadStart);
+                        thread.Start();
 
                         cmd.Parameters.AddWithValue("@callStatus", callStatus);
                         cmd.Parameters.AddWithValue("@ClosedDate", callDateResolved);
@@ -450,6 +465,7 @@ namespace TicketsLogger
                         cmd.ExecuteNonQuery();
                     }
                 }
+                
                 MessageBox.Show("Call sucessfully " + status + "!");
             }
         }
