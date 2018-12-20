@@ -100,10 +100,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.closeBtnExit = new System.Windows.Forms.Button();
             this.closeBtnSave = new System.Windows.Forms.Button();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.escPnlEsclTo = new System.Windows.Forms.Panel();
             this.clsEscalatedTo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -153,8 +153,8 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel18.SuspendLayout();
-            this.groupBox14.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.escPnlEsclTo.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -243,6 +243,7 @@
             this.viewProfileToolStripMenuItem.Name = "viewProfileToolStripMenuItem";
             this.viewProfileToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.viewProfileToolStripMenuItem.Text = "View Profile";
+            this.viewProfileToolStripMenuItem.Click += new System.EventHandler(this.viewProfileToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
@@ -1061,26 +1062,6 @@
             this.panel18.Size = new System.Drawing.Size(1301, 321);
             this.panel18.TabIndex = 2;
             // 
-            // groupBox14
-            // 
-            this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox14.BackColor = System.Drawing.Color.White;
-            this.groupBox14.Controls.Add(this.escPnlEsclTo);
-            this.groupBox14.Controls.Add(this.closeTxtMessage);
-            this.groupBox14.Controls.Add(this.label51);
-            this.groupBox14.Controls.Add(this.label52);
-            this.groupBox14.Controls.Add(this.groupBox15);
-            this.groupBox14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox14.Location = new System.Drawing.Point(0, 0);
-            this.groupBox14.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox14.Size = new System.Drawing.Size(1287, 257);
-            this.groupBox14.TabIndex = 0;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Close/Escalate a call";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -1120,6 +1101,26 @@
             this.closeBtnSave.Text = "Save";
             this.closeBtnSave.UseVisualStyleBackColor = false;
             this.closeBtnSave.Click += new System.EventHandler(this.closeBtnSave_Click);
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox14.BackColor = System.Drawing.Color.White;
+            this.groupBox14.Controls.Add(this.escPnlEsclTo);
+            this.groupBox14.Controls.Add(this.closeTxtMessage);
+            this.groupBox14.Controls.Add(this.label51);
+            this.groupBox14.Controls.Add(this.label52);
+            this.groupBox14.Controls.Add(this.groupBox15);
+            this.groupBox14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox14.Location = new System.Drawing.Point(0, 0);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox14.Size = new System.Drawing.Size(1287, 257);
+            this.groupBox14.TabIndex = 0;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Close/Escalate a call";
             // 
             // escPnlEsclTo
             // 
@@ -1451,9 +1452,9 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.escPnlEsclTo.ResumeLayout(false);
             this.escPnlEsclTo.PerformLayout();
             this.groupBox15.ResumeLayout(false);

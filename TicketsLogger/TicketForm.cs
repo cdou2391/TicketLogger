@@ -469,5 +469,11 @@ namespace TicketsLogger
                 MessageBox.Show("Call sucessfully " + status + "!");
             }
         }
+
+        private void viewProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            profileFrm frmProfile = new profileFrm();
+            frmProfile.Show();
+        }
     }
 }
