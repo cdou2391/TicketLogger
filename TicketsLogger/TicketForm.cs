@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -32,6 +34,15 @@ namespace TicketsLogger
             LoadStaffUser();
             LoadCalls();
             this.Text =ProductName.ToString()+ " " + ProductVersion.ToString();
+            //if (Global.Staff.Role == "Admin")
+            //{
+            //    Tab1.TabPages.Insert(3,tabLogs);
+            //    MessageBox.Show("Admin");
+            //}
+            //else
+            //{
+            //    Tab1.TabPages.Remove(tabLogs);
+            //}
         }
 
         private void RecBtnExit_Click(object sender, EventArgs e)
@@ -474,6 +485,58 @@ namespace TicketsLogger
         {
             profileFrm frmProfile = new profileFrm();
             frmProfile.Show();
+        }
+
+        private void btnRefreshLog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnErrLog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + @"TicketsLogger\Logs\TicketsLogs.txt";
+                using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
+                {
+                    txtLog.Text = streamReader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                new LogWriter(ex);
+            }
+        }
+
+        private void btnLogLogs_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + @"TicketsLogger\Logs\loginLogs.txt";
+                using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
+                {
+                    txtLog.Text = streamReader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                new LogWriter(ex);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("You are about to exit and log out of the application. Are you sure?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
         }
     }
 }

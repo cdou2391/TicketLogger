@@ -39,7 +39,7 @@
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Tab1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -128,9 +128,17 @@
             this.label58 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label60 = new System.Windows.Forms.Label();
+            this.tabLogs = new System.Windows.Forms.TabPage();
+            this.pnlLog = new System.Windows.Forms.Panel();
+            this.txtLog = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnErrLog = new System.Windows.Forms.Button();
+            this.btnLogLogs = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.Tab1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -160,6 +168,10 @@
             this.panel19.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.panel20.SuspendLayout();
+            this.tabLogs.SuspendLayout();
+            this.pnlLog.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -256,27 +268,28 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Controls.Add(this.Tab1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1317, 790);
             this.panel1.TabIndex = 3;
             // 
-            // tabControl1
+            // Tab1
             // 
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1317, 790);
-            this.tabControl1.TabIndex = 1;
+            this.Tab1.Controls.Add(this.tabPage3);
+            this.Tab1.Controls.Add(this.tabPage2);
+            this.Tab1.Controls.Add(this.tabPage5);
+            this.Tab1.Controls.Add(this.tabLogs);
+            this.Tab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tab1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tab1.Location = new System.Drawing.Point(0, 0);
+            this.Tab1.Margin = new System.Windows.Forms.Padding(4);
+            this.Tab1.Multiline = true;
+            this.Tab1.Name = "Tab1";
+            this.Tab1.SelectedIndex = 0;
+            this.Tab1.Size = new System.Drawing.Size(1317, 790);
+            this.Tab1.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -1404,6 +1417,97 @@
             this.label60.TabIndex = 0;
             this.label60.Text = "Close/Escale incident or Request";
             // 
+            // tabLogs
+            // 
+            this.tabLogs.Controls.Add(this.pnlLog);
+            this.tabLogs.Location = new System.Drawing.Point(4, 33);
+            this.tabLogs.Name = "tabLogs";
+            this.tabLogs.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLogs.Size = new System.Drawing.Size(1309, 753);
+            this.tabLogs.TabIndex = 9;
+            this.tabLogs.Text = "Logs";
+            this.tabLogs.UseVisualStyleBackColor = true;
+            // 
+            // pnlLog
+            // 
+            this.pnlLog.Controls.Add(this.panel5);
+            this.pnlLog.Controls.Add(this.txtLog);
+            this.pnlLog.Controls.Add(this.panel4);
+            this.pnlLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLog.Location = new System.Drawing.Point(3, 3);
+            this.pnlLog.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlLog.Name = "pnlLog";
+            this.pnlLog.Size = new System.Drawing.Size(1303, 747);
+            this.pnlLog.TabIndex = 2;
+            // 
+            // txtLog
+            // 
+            this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLog.Location = new System.Drawing.Point(0, 47);
+            this.txtLog.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.ReadOnly = true;
+            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtLog.Size = new System.Drawing.Size(1303, 700);
+            this.txtLog.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnLogLogs);
+            this.panel4.Controls.Add(this.btnErrLog);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1303, 47);
+            this.panel4.TabIndex = 1;
+            // 
+            // btnErrLog
+            // 
+            this.btnErrLog.Location = new System.Drawing.Point(8, 4);
+            this.btnErrLog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnErrLog.Name = "btnErrLog";
+            this.btnErrLog.Size = new System.Drawing.Size(204, 37);
+            this.btnErrLog.TabIndex = 0;
+            this.btnErrLog.Text = "Show Error Logs";
+            this.btnErrLog.UseVisualStyleBackColor = true;
+            this.btnErrLog.Click += new System.EventHandler(this.btnErrLog_Click);
+            // 
+            // btnLogLogs
+            // 
+            this.btnLogLogs.Location = new System.Drawing.Point(220, 4);
+            this.btnLogLogs.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogLogs.Name = "btnLogLogs";
+            this.btnLogLogs.Size = new System.Drawing.Size(204, 37);
+            this.btnLogLogs.TabIndex = 1;
+            this.btnLogLogs.Text = "Show Login Logs";
+            this.btnLogLogs.UseVisualStyleBackColor = true;
+            this.btnLogLogs.Click += new System.EventHandler(this.btnLogLogs_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 700);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1303, 47);
+            this.panel5.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.Location = new System.Drawing.Point(1126, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 42);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1421,7 +1525,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.Tab1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -1465,6 +1569,11 @@
             this.groupBox16.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            this.tabLogs.ResumeLayout(false);
+            this.pnlLog.ResumeLayout(false);
+            this.pnlLog.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1481,7 +1590,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewProfileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl Tab1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
@@ -1571,5 +1680,13 @@
         private System.Windows.Forms.Panel escPnlEsclTo;
         private System.Windows.Forms.ComboBox clsEscalatedTo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabLogs;
+        private System.Windows.Forms.Panel pnlLog;
+        private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnLogLogs;
+        private System.Windows.Forms.Button btnErrLog;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button1;
     }
 }
