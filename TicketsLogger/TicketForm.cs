@@ -333,6 +333,7 @@ namespace TicketsLogger
 
         private void locBtnShowAll_Click(object sender, EventArgs e)
         {
+            LoadCalls();
             DataTable table = new DataTable();
             using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
             {
