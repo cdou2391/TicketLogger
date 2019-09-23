@@ -34,6 +34,7 @@
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configurationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffNames = new System.Windows.Forms.ToolStripMenuItem();
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +43,10 @@
             this.Tab1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.recComboUnikNo = new System.Windows.Forms.ComboBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.recBtnSearch = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -52,57 +57,27 @@
             this.RecBtnClear = new System.Windows.Forms.Button();
             this.RecBtnExit = new System.Windows.Forms.Button();
             this.recComboAssignedTo = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.recComboUnikNo = new System.Windows.Forms.ComboBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.recBtnSearch = new System.Windows.Forms.Button();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label43 = new System.Windows.Forms.Label();
-            this.recTxtContactNo = new System.Windows.Forms.TextBox();
-            this.recTxtSurname = new System.Windows.Forms.TextBox();
-            this.recTxtName = new System.Windows.Forms.TextBox();
-            this.recTxtEmail = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.recTxtUnit = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.recTxtFloorNo = new System.Windows.Forms.TextBox();
-            this.recTxtBuilding = new System.Windows.Forms.TextBox();
-            this.recTxtDept = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.recRadRequest = new System.Windows.Forms.RadioButton();
             this.recRadIncident = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.LocateBtnExit = new System.Windows.Forms.Button();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.locComboUnikNo = new System.Windows.Forms.ComboBox();
             this.locBtnShowAll = new System.Windows.Forms.Button();
             this.LocBtnContinue = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.LocateBtnExit = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.closeBtnExit = new System.Windows.Forms.Button();
-            this.closeBtnSave = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.escPnlEsclTo = new System.Windows.Forms.Panel();
             this.clsEscalatedTo = new System.Windows.Forms.ComboBox();
@@ -118,6 +93,8 @@
             this.closeBtnSearch = new System.Windows.Forms.Button();
             this.label54 = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.closeTxtDescription = new System.Windows.Forms.TextBox();
             this.closeTxtAssignedTo = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
@@ -128,6 +105,9 @@
             this.label58 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label60 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.closeBtnExit = new System.Windows.Forms.Button();
+            this.closeBtnSave = new System.Windows.Forms.Button();
             this.tabLogs = new System.Windows.Forms.TabPage();
             this.pnlLog = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -141,33 +121,26 @@
             this.Tab1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel18.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.escPnlEsclTo.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.panel19.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.panel20.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tabLogs.SuspendLayout();
             this.pnlLog.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -183,7 +156,8 @@
             this.staffNames});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(988, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(14, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(2004, 51);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -194,10 +168,11 @@
             this.alwaysOnTopToolStripMenuItem,
             this.logOutToolStripMenuItem1,
             this.viewLogsToolStripMenuItem,
+            this.configurationsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(70, 43);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // alwaysOnTopToolStripMenuItem
@@ -205,7 +180,7 @@
             this.alwaysOnTopToolStripMenuItem.BackColor = System.Drawing.Color.RoyalBlue;
             this.alwaysOnTopToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(360, 42);
             this.alwaysOnTopToolStripMenuItem.Text = "Always OnTop";
             // 
             // logOutToolStripMenuItem1
@@ -213,7 +188,7 @@
             this.logOutToolStripMenuItem1.BackColor = System.Drawing.Color.RoyalBlue;
             this.logOutToolStripMenuItem1.ForeColor = System.Drawing.Color.Red;
             this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
-            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(360, 42);
             this.logOutToolStripMenuItem1.Text = "Log Out";
             this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
             // 
@@ -222,15 +197,24 @@
             this.viewLogsToolStripMenuItem.BackColor = System.Drawing.Color.RoyalBlue;
             this.viewLogsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.viewLogsToolStripMenuItem.Name = "viewLogsToolStripMenuItem";
-            this.viewLogsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.viewLogsToolStripMenuItem.Size = new System.Drawing.Size(360, 42);
             this.viewLogsToolStripMenuItem.Text = "View Logs";
+            // 
+            // configurationsToolStripMenuItem
+            // 
+            this.configurationsToolStripMenuItem.BackColor = System.Drawing.Color.RoyalBlue;
+            this.configurationsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.configurationsToolStripMenuItem.Name = "configurationsToolStripMenuItem";
+            this.configurationsToolStripMenuItem.Size = new System.Drawing.Size(360, 42);
+            this.configurationsToolStripMenuItem.Text = "Configurations";
+            this.configurationsToolStripMenuItem.Click += new System.EventHandler(this.configurationsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.BackColor = System.Drawing.Color.RoyalBlue;
             this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(360, 42);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -243,7 +227,7 @@
             this.staffNames.ForeColor = System.Drawing.SystemColors.Info;
             this.staffNames.Image = ((System.Drawing.Image)(resources.GetObject("staffNames.Image")));
             this.staffNames.Name = "staffNames";
-            this.staffNames.Size = new System.Drawing.Size(101, 24);
+            this.staffNames.Size = new System.Drawing.Size(186, 43);
             this.staffNames.Text = "Staff Name ";
             // 
             // viewProfileToolStripMenuItem
@@ -252,7 +236,7 @@
             this.viewProfileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.viewProfileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewProfileToolStripMenuItem.Image")));
             this.viewProfileToolStripMenuItem.Name = "viewProfileToolStripMenuItem";
-            this.viewProfileToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.viewProfileToolStripMenuItem.Size = new System.Drawing.Size(465, 42);
             this.viewProfileToolStripMenuItem.Text = "View Profile";
             this.viewProfileToolStripMenuItem.Click += new System.EventHandler(this.viewProfileToolStripMenuItem_Click);
             // 
@@ -262,17 +246,17 @@
             this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.changePasswordToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("changePasswordToolStripMenuItem.Image")));
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(465, 42);
             this.changePasswordToolStripMenuItem.Text = "Request Change of Password";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.Tab1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 51);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(988, 637);
+            this.panel1.Size = new System.Drawing.Size(2004, 1397);
             this.panel1.TabIndex = 3;
             // 
             // Tab1
@@ -282,43 +266,94 @@
             this.Tab1.Controls.Add(this.tabPage5);
             this.Tab1.Controls.Add(this.tabLogs);
             this.Tab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Tab1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tab1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tab1.Location = new System.Drawing.Point(0, 0);
+            this.Tab1.Margin = new System.Windows.Forms.Padding(7);
             this.Tab1.Multiline = true;
             this.Tab1.Name = "Tab1";
             this.Tab1.SelectedIndex = 0;
-            this.Tab1.Size = new System.Drawing.Size(988, 637);
+            this.Tab1.Size = new System.Drawing.Size(2004, 1397);
             this.Tab1.TabIndex = 1;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Controls.Add(this.panel7);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(10, 58);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(980, 605);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(7);
+            this.tabPage3.Size = new System.Drawing.Size(1984, 1329);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Record Call";
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.panel17);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.recComboPriority);
             this.panel7.Controls.Add(this.panel3);
             this.panel7.Controls.Add(this.recComboAssignedTo);
-            this.panel7.Controls.Add(this.tableLayoutPanel12);
             this.panel7.Controls.Add(this.label33);
             this.panel7.Controls.Add(this.tableLayoutPanel7);
             this.panel7.Controls.Add(this.label32);
-            this.panel7.Controls.Add(this.tableLayoutPanel8);
             this.panel7.Controls.Add(this.groupBox7);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Location = new System.Drawing.Point(7, 7);
+            this.panel7.Margin = new System.Windows.Forms.Padding(7);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(974, 599);
+            this.panel7.Size = new System.Drawing.Size(1970, 1315);
             this.panel7.TabIndex = 1;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.recComboUnikNo);
+            this.panel17.Controls.Add(this.label53);
+            this.panel17.Controls.Add(this.recBtnSearch);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 74);
+            this.panel17.Margin = new System.Windows.Forms.Padding(7);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(1970, 74);
+            this.panel17.TabIndex = 4;
+            // 
+            // recComboUnikNo
+            // 
+            this.recComboUnikNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.recComboUnikNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.recComboUnikNo.BackColor = System.Drawing.SystemColors.Control;
+            this.recComboUnikNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recComboUnikNo.FormattingEnabled = true;
+            this.recComboUnikNo.Location = new System.Drawing.Point(287, 13);
+            this.recComboUnikNo.Margin = new System.Windows.Forms.Padding(7);
+            this.recComboUnikNo.Name = "recComboUnikNo";
+            this.recComboUnikNo.Size = new System.Drawing.Size(417, 48);
+            this.recComboUnikNo.TabIndex = 10;
+            // 
+            // label53
+            // 
+            this.label53.BackColor = System.Drawing.Color.Transparent;
+            this.label53.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(7, 7);
+            this.label53.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(245, 60);
+            this.label53.TabIndex = 9;
+            this.label53.Text = "Reporting staff:";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // recBtnSearch
+            // 
+            this.recBtnSearch.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recBtnSearch.Location = new System.Drawing.Point(737, 13);
+            this.recBtnSearch.Margin = new System.Windows.Forms.Padding(7, 13, 7, 13);
+            this.recBtnSearch.Name = "recBtnSearch";
+            this.recBtnSearch.Size = new System.Drawing.Size(236, 54);
+            this.recBtnSearch.TabIndex = 8;
+            this.recBtnSearch.Text = "Search";
+            this.recBtnSearch.UseVisualStyleBackColor = true;
+            this.recBtnSearch.Click += new System.EventHandler(this.recBtnSearch_Click);
             // 
             // panel8
             // 
@@ -326,18 +361,20 @@
             this.panel8.Controls.Add(this.label34);
             this.panel8.Controls.Add(this.recTxtCallDescription);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 433);
+            this.panel8.Location = new System.Drawing.Point(0, 362);
+            this.panel8.Margin = new System.Windows.Forms.Padding(7);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(974, 116);
+            this.panel8.Size = new System.Drawing.Size(1970, 873);
             this.panel8.TabIndex = 11;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(284, 9);
+            this.label35.Location = new System.Drawing.Point(898, 20);
+            this.label35.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(449, 18);
+            this.label35.Size = new System.Drawing.Size(972, 40);
             this.label35.TabIndex = 2;
             this.label35.Text = "NOT less than 20 characters, and NOT more than 1000 characters";
             // 
@@ -345,20 +382,22 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(20, 9);
+            this.label34.Location = new System.Drawing.Point(14, 20);
+            this.label34.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(181, 19);
+            this.label34.Size = new System.Drawing.Size(481, 43);
             this.label34.TabIndex = 1;
-            this.label34.Text = "Description of a call: ";
+            this.label34.Text = "Description of the ticket: ";
             // 
             // recTxtCallDescription
             // 
             this.recTxtCallDescription.BackColor = System.Drawing.SystemColors.Control;
             this.recTxtCallDescription.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtCallDescription.Location = new System.Drawing.Point(24, 31);
+            this.recTxtCallDescription.Location = new System.Drawing.Point(23, 89);
+            this.recTxtCallDescription.Margin = new System.Windows.Forms.Padding(7);
             this.recTxtCallDescription.Multiline = true;
             this.recTxtCallDescription.Name = "recTxtCallDescription";
-            this.recTxtCallDescription.Size = new System.Drawing.Size(939, 75);
+            this.recTxtCallDescription.Size = new System.Drawing.Size(1917, 746);
             this.recTxtCallDescription.TabIndex = 0;
             // 
             // recComboPriority
@@ -370,9 +409,10 @@
             "High",
             "Low",
             "Medium"});
-            this.recComboPriority.Location = new System.Drawing.Point(706, 382);
+            this.recComboPriority.Location = new System.Drawing.Point(1224, 278);
+            this.recComboPriority.Margin = new System.Windows.Forms.Padding(7);
             this.recComboPriority.Name = "recComboPriority";
-            this.recComboPriority.Size = new System.Drawing.Size(244, 26);
+            this.recComboPriority.Size = new System.Drawing.Size(564, 48);
             this.recComboPriority.TabIndex = 4;
             this.recComboPriority.Text = "Choose";
             // 
@@ -382,19 +422,23 @@
             this.panel3.Controls.Add(this.RecBtnClear);
             this.panel3.Controls.Add(this.RecBtnExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 549);
+            this.panel3.Location = new System.Drawing.Point(0, 1235);
+            this.panel3.Margin = new System.Windows.Forms.Padding(7);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(974, 50);
+            this.panel3.Size = new System.Drawing.Size(1970, 80);
             this.panel3.TabIndex = 10;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // RecBtnSave
             // 
+            this.RecBtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RecBtnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.RecBtnSave.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecBtnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.RecBtnSave.Location = new System.Drawing.Point(600, 9);
+            this.RecBtnSave.Location = new System.Drawing.Point(1447, 9);
+            this.RecBtnSave.Margin = new System.Windows.Forms.Padding(7);
             this.RecBtnSave.Name = "RecBtnSave";
-            this.RecBtnSave.Size = new System.Drawing.Size(117, 34);
+            this.RecBtnSave.Size = new System.Drawing.Size(149, 56);
             this.RecBtnSave.TabIndex = 8;
             this.RecBtnSave.Text = "Save";
             this.RecBtnSave.UseVisualStyleBackColor = false;
@@ -406,9 +450,10 @@
             this.RecBtnClear.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.RecBtnClear.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecBtnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.RecBtnClear.Location = new System.Drawing.Point(721, 9);
+            this.RecBtnClear.Location = new System.Drawing.Point(1622, 9);
+            this.RecBtnClear.Margin = new System.Windows.Forms.Padding(7);
             this.RecBtnClear.Name = "RecBtnClear";
-            this.RecBtnClear.Size = new System.Drawing.Size(117, 34);
+            this.RecBtnClear.Size = new System.Drawing.Size(149, 56);
             this.RecBtnClear.TabIndex = 7;
             this.RecBtnClear.Text = "Clear";
             this.RecBtnClear.UseVisualStyleBackColor = false;
@@ -419,9 +464,10 @@
             this.RecBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
             this.RecBtnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecBtnExit.ForeColor = System.Drawing.SystemColors.Info;
-            this.RecBtnExit.Location = new System.Drawing.Point(844, 8);
+            this.RecBtnExit.Location = new System.Drawing.Point(1792, 9);
+            this.RecBtnExit.Margin = new System.Windows.Forms.Padding(7);
             this.RecBtnExit.Name = "RecBtnExit";
-            this.RecBtnExit.Size = new System.Drawing.Size(117, 34);
+            this.RecBtnExit.Size = new System.Drawing.Size(149, 56);
             this.RecBtnExit.TabIndex = 6;
             this.RecBtnExit.Text = "Exit";
             this.RecBtnExit.UseVisualStyleBackColor = false;
@@ -432,189 +478,21 @@
             this.recComboAssignedTo.BackColor = System.Drawing.SystemColors.Control;
             this.recComboAssignedTo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recComboAssignedTo.FormattingEnabled = true;
-            this.recComboAssignedTo.Location = new System.Drawing.Point(706, 336);
+            this.recComboAssignedTo.Location = new System.Drawing.Point(1224, 175);
+            this.recComboAssignedTo.Margin = new System.Windows.Forms.Padding(7);
             this.recComboAssignedTo.Name = "recComboAssignedTo";
-            this.recComboAssignedTo.Size = new System.Drawing.Size(244, 26);
+            this.recComboAssignedTo.Size = new System.Drawing.Size(564, 48);
             this.recComboAssignedTo.TabIndex = 3;
             this.recComboAssignedTo.Text = "Choose";
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 1;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.panel17, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.groupBox11, 0, 1);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(4, 36);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.71218F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.28783F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(502, 271);
-            this.tableLayoutPanel12.TabIndex = 9;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.recComboUnikNo);
-            this.panel17.Controls.Add(this.label53);
-            this.panel17.Controls.Add(this.recBtnSearch);
-            this.panel17.Location = new System.Drawing.Point(3, 3);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(496, 41);
-            this.panel17.TabIndex = 4;
-            // 
-            // recComboUnikNo
-            // 
-            this.recComboUnikNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.recComboUnikNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.recComboUnikNo.BackColor = System.Drawing.SystemColors.Control;
-            this.recComboUnikNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recComboUnikNo.FormattingEnabled = true;
-            this.recComboUnikNo.Location = new System.Drawing.Point(205, 9);
-            this.recComboUnikNo.Name = "recComboUnikNo";
-            this.recComboUnikNo.Size = new System.Drawing.Size(161, 26);
-            this.recComboUnikNo.TabIndex = 10;
-            // 
-            // label53
-            // 
-            this.label53.BackColor = System.Drawing.Color.Transparent;
-            this.label53.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(13, 8);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(167, 27);
-            this.label53.TabIndex = 9;
-            this.label53.Text = "Unique Number:";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // recBtnSearch
-            // 
-            this.recBtnSearch.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recBtnSearch.Location = new System.Drawing.Point(374, 9);
-            this.recBtnSearch.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.recBtnSearch.Name = "recBtnSearch";
-            this.recBtnSearch.Size = new System.Drawing.Size(101, 24);
-            this.recBtnSearch.TabIndex = 8;
-            this.recBtnSearch.Text = "Search";
-            this.recBtnSearch.UseVisualStyleBackColor = true;
-            this.recBtnSearch.Click += new System.EventHandler(this.recBtnSearch_Click);
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox11.Controls.Add(this.panel11);
-            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.Location = new System.Drawing.Point(3, 51);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(496, 217);
-            this.groupBox11.TabIndex = 5;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Staff Information";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label43);
-            this.panel11.Controls.Add(this.recTxtContactNo);
-            this.panel11.Controls.Add(this.recTxtSurname);
-            this.panel11.Controls.Add(this.recTxtName);
-            this.panel11.Controls.Add(this.recTxtEmail);
-            this.panel11.Controls.Add(this.label46);
-            this.panel11.Controls.Add(this.label45);
-            this.panel11.Controls.Add(this.label44);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(3, 23);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(490, 191);
-            this.panel11.TabIndex = 1;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.Color.Transparent;
-            this.label43.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(30, 145);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(120, 18);
-            this.label43.TabIndex = 1;
-            this.label43.Text = "Contact Number:";
-            // 
-            // recTxtContactNo
-            // 
-            this.recTxtContactNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtContactNo.Location = new System.Drawing.Point(202, 142);
-            this.recTxtContactNo.Name = "recTxtContactNo";
-            this.recTxtContactNo.ReadOnly = true;
-            this.recTxtContactNo.Size = new System.Drawing.Size(244, 25);
-            this.recTxtContactNo.TabIndex = 0;
-            // 
-            // recTxtSurname
-            // 
-            this.recTxtSurname.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtSurname.Location = new System.Drawing.Point(202, 58);
-            this.recTxtSurname.Name = "recTxtSurname";
-            this.recTxtSurname.ReadOnly = true;
-            this.recTxtSurname.Size = new System.Drawing.Size(244, 25);
-            this.recTxtSurname.TabIndex = 2;
-            // 
-            // recTxtName
-            // 
-            this.recTxtName.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtName.Location = new System.Drawing.Point(202, 11);
-            this.recTxtName.Margin = new System.Windows.Forms.Padding(10, 20, 10, 20);
-            this.recTxtName.Name = "recTxtName";
-            this.recTxtName.ReadOnly = true;
-            this.recTxtName.Size = new System.Drawing.Size(244, 25);
-            this.recTxtName.TabIndex = 3;
-            // 
-            // recTxtEmail
-            // 
-            this.recTxtEmail.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtEmail.Location = new System.Drawing.Point(202, 101);
-            this.recTxtEmail.Margin = new System.Windows.Forms.Padding(10, 20, 10, 20);
-            this.recTxtEmail.Name = "recTxtEmail";
-            this.recTxtEmail.ReadOnly = true;
-            this.recTxtEmail.Size = new System.Drawing.Size(244, 25);
-            this.recTxtEmail.TabIndex = 6;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.Transparent;
-            this.label46.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(30, 104);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(46, 18);
-            this.label46.TabIndex = 2;
-            this.label46.Text = "Email:";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.BackColor = System.Drawing.Color.Transparent;
-            this.label45.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(30, 61);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(76, 18);
-            this.label45.TabIndex = 1;
-            this.label45.Text = "Surname: ";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.Transparent;
-            this.label44.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(30, 14);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(52, 18);
-            this.label44.TabIndex = 0;
-            this.label44.Text = "Name:";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(540, 385);
+            this.label33.Location = new System.Drawing.Point(963, 287);
+            this.label33.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(56, 18);
+            this.label33.Size = new System.Drawing.Size(132, 40);
             this.label33.TabIndex = 2;
             this.label33.Text = "Priority:";
             // 
@@ -627,12 +505,13 @@
             this.tableLayoutPanel7.Controls.Add(this.label31, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(974, 33);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1970, 74);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // label31
@@ -642,9 +521,10 @@
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label31.Location = new System.Drawing.Point(327, 0);
+            this.label31.Location = new System.Drawing.Point(663, 0);
+            this.label31.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(318, 33);
+            this.label31.Size = new System.Drawing.Size(642, 74);
             this.label31.TabIndex = 3;
             this.label31.Text = "Record Incident/Request";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -653,152 +533,23 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(540, 339);
+            this.label32.Location = new System.Drawing.Point(963, 182);
+            this.label32.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(98, 18);
+            this.label32.Size = new System.Drawing.Size(215, 40);
             this.label32.TabIndex = 1;
             this.label32.Text = "Assigned To: ";
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel8.ColumnCount = 1;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.groupBox10, 0, 1);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(509, 36);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 3;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.53211F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.46789F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(459, 265);
-            this.tableLayoutPanel8.TabIndex = 4;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox10.Controls.Add(this.panel9);
-            this.groupBox10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(3, 51);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(453, 207);
-            this.groupBox10.TabIndex = 5;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Site Information:";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.recTxtUnit);
-            this.panel9.Controls.Add(this.label1);
-            this.panel9.Controls.Add(this.recTxtFloorNo);
-            this.panel9.Controls.Add(this.recTxtBuilding);
-            this.panel9.Controls.Add(this.recTxtDept);
-            this.panel9.Controls.Add(this.label42);
-            this.panel9.Controls.Add(this.label37);
-            this.panel9.Controls.Add(this.label38);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel9.Location = new System.Drawing.Point(3, 23);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(447, 181);
-            this.panel9.TabIndex = 2;
-            // 
-            // recTxtUnit
-            // 
-            this.recTxtUnit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtUnit.Location = new System.Drawing.Point(193, 58);
-            this.recTxtUnit.Multiline = true;
-            this.recTxtUnit.Name = "recTxtUnit";
-            this.recTxtUnit.ReadOnly = true;
-            this.recTxtUnit.Size = new System.Drawing.Size(242, 26);
-            this.recTxtUnit.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 18);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Unit:";
-            // 
-            // recTxtFloorNo
-            // 
-            this.recTxtFloorNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtFloorNo.Location = new System.Drawing.Point(193, 137);
-            this.recTxtFloorNo.Name = "recTxtFloorNo";
-            this.recTxtFloorNo.ReadOnly = true;
-            this.recTxtFloorNo.Size = new System.Drawing.Size(244, 25);
-            this.recTxtFloorNo.TabIndex = 9;
-            // 
-            // recTxtBuilding
-            // 
-            this.recTxtBuilding.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtBuilding.Location = new System.Drawing.Point(193, 101);
-            this.recTxtBuilding.Name = "recTxtBuilding";
-            this.recTxtBuilding.ReadOnly = true;
-            this.recTxtBuilding.Size = new System.Drawing.Size(244, 25);
-            this.recTxtBuilding.TabIndex = 4;
-            // 
-            // recTxtDept
-            // 
-            this.recTxtDept.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtDept.Location = new System.Drawing.Point(193, 17);
-            this.recTxtDept.Multiline = true;
-            this.recTxtDept.Name = "recTxtDept";
-            this.recTxtDept.ReadOnly = true;
-            this.recTxtDept.Size = new System.Drawing.Size(242, 26);
-            this.recTxtDept.TabIndex = 8;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.Color.Transparent;
-            this.label42.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(25, 101);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(60, 18);
-            this.label42.TabIndex = 7;
-            this.label42.Text = "Building:";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(25, 141);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(101, 18);
-            this.label37.TabIndex = 1;
-            this.label37.Text = "Floor Number:";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.Transparent;
-            this.label38.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(25, 20);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(91, 18);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "Department:";
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.recRadRequest);
             this.groupBox7.Controls.Add(this.recRadIncident);
             this.groupBox7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(24, 313);
+            this.groupBox7.Location = new System.Drawing.Point(22, 162);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(354, 60);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBox7.Size = new System.Drawing.Size(826, 134);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Incident/Request";
@@ -807,9 +558,10 @@
             // 
             this.recRadRequest.AutoSize = true;
             this.recRadRequest.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recRadRequest.Location = new System.Drawing.Point(206, 26);
+            this.recRadRequest.Location = new System.Drawing.Point(481, 58);
+            this.recRadRequest.Margin = new System.Windows.Forms.Padding(7);
             this.recRadRequest.Name = "recRadRequest";
-            this.recRadRequest.Size = new System.Drawing.Size(79, 22);
+            this.recRadRequest.Size = new System.Drawing.Size(164, 44);
             this.recRadRequest.TabIndex = 1;
             this.recRadRequest.TabStop = true;
             this.recRadRequest.Text = "Request";
@@ -820,9 +572,10 @@
             this.recRadIncident.AutoSize = true;
             this.recRadIncident.Checked = true;
             this.recRadIncident.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recRadIncident.Location = new System.Drawing.Point(20, 26);
+            this.recRadIncident.Location = new System.Drawing.Point(47, 58);
+            this.recRadIncident.Margin = new System.Windows.Forms.Padding(7);
             this.recRadIncident.Name = "recRadIncident";
-            this.recRadIncident.Size = new System.Drawing.Size(78, 22);
+            this.recRadIncident.Size = new System.Drawing.Size(165, 44);
             this.recRadIncident.TabIndex = 0;
             this.recRadIncident.TabStop = true;
             this.recRadIncident.Text = "Incident";
@@ -831,53 +584,28 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.LocateBtnExit);
-            this.tabPage2.Controls.Add(this.tableLayoutPanel5);
-            this.tabPage2.Controls.Add(this.tableLayoutPanel4);
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Controls.Add(this.panel6);
+            this.tabPage2.Controls.Add(this.panel9);
             this.tabPage2.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(10, 58);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(980, 605);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(7);
+            this.tabPage2.Size = new System.Drawing.Size(1984, 1331);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Locate Call";
-            // 
-            // LocateBtnExit
-            // 
-            this.LocateBtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LocateBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.LocateBtnExit.Location = new System.Drawing.Point(858, 566);
-            this.LocateBtnExit.Name = "LocateBtnExit";
-            this.LocateBtnExit.Size = new System.Drawing.Size(117, 34);
-            this.LocateBtnExit.TabIndex = 9;
-            this.LocateBtnExit.Text = "Exit";
-            this.LocateBtnExit.UseVisualStyleBackColor = false;
-            this.LocateBtnExit.Click += new System.EventHandler(this.LocateBtnExit_Click);
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.groupBox5, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 82);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(974, 520);
-            this.tableLayoutPanel5.TabIndex = 8;
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.dataGridView1);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(20, 20);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.groupBox5.Location = new System.Drawing.Point(7, 170);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(47, 45, 47, 45);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(934, 480);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBox5.Size = new System.Drawing.Size(1970, 1083);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Incidents and Requests";
@@ -887,40 +615,23 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 47);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(70, 67, 70, 67);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(928, 454);
+            this.dataGridView1.Size = new System.Drawing.Size(1956, 1029);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.1232F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.41889F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.35524F));
-            this.tableLayoutPanel4.Controls.Add(this.panel6, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 36);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(974, 46);
-            this.tableLayoutPanel4.TabIndex = 7;
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.locComboUnikNo);
             this.panel6.Controls.Add(this.locBtnShowAll);
             this.panel6.Controls.Add(this.LocBtnContinue);
             this.panel6.Controls.Add(this.label18);
-            this.panel6.Location = new System.Drawing.Point(199, 3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(7, 81);
+            this.panel6.Margin = new System.Windows.Forms.Padding(7);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(563, 40);
+            this.panel6.Size = new System.Drawing.Size(1970, 89);
             this.panel6.TabIndex = 0;
             // 
             // locComboUnikNo
@@ -929,16 +640,18 @@
             this.locComboUnikNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.locComboUnikNo.BackColor = System.Drawing.SystemColors.Control;
             this.locComboUnikNo.FormattingEnabled = true;
-            this.locComboUnikNo.Location = new System.Drawing.Point(158, 9);
+            this.locComboUnikNo.Location = new System.Drawing.Point(294, 20);
+            this.locComboUnikNo.Margin = new System.Windows.Forms.Padding(7);
             this.locComboUnikNo.Name = "locComboUnikNo";
-            this.locComboUnikNo.Size = new System.Drawing.Size(181, 27);
+            this.locComboUnikNo.Size = new System.Drawing.Size(340, 48);
             this.locComboUnikNo.TabIndex = 3;
             // 
             // locBtnShowAll
             // 
-            this.locBtnShowAll.Location = new System.Drawing.Point(467, 9);
+            this.locBtnShowAll.Location = new System.Drawing.Point(877, 13);
+            this.locBtnShowAll.Margin = new System.Windows.Forms.Padding(7);
             this.locBtnShowAll.Name = "locBtnShowAll";
-            this.locBtnShowAll.Size = new System.Drawing.Size(84, 27);
+            this.locBtnShowAll.Size = new System.Drawing.Size(196, 60);
             this.locBtnShowAll.TabIndex = 1;
             this.locBtnShowAll.Text = "Show all";
             this.locBtnShowAll.UseVisualStyleBackColor = true;
@@ -946,9 +659,10 @@
             // 
             // LocBtnContinue
             // 
-            this.LocBtnContinue.Location = new System.Drawing.Point(353, 9);
+            this.LocBtnContinue.Location = new System.Drawing.Point(646, 13);
+            this.LocBtnContinue.Margin = new System.Windows.Forms.Padding(7);
             this.LocBtnContinue.Name = "LocBtnContinue";
-            this.LocBtnContinue.Size = new System.Drawing.Size(93, 27);
+            this.LocBtnContinue.Size = new System.Drawing.Size(217, 60);
             this.LocBtnContinue.TabIndex = 2;
             this.LocBtnContinue.Text = "Show";
             this.LocBtnContinue.UseVisualStyleBackColor = true;
@@ -957,11 +671,34 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 12);
+            this.label18.Location = new System.Drawing.Point(16, 22);
+            this.label18.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(146, 19);
+            this.label18.Size = new System.Drawing.Size(240, 40);
             this.label18.TabIndex = 0;
-            this.label18.Text = "Reference Number:";
+            this.label18.Text = "Ticket Number:";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.LocateBtnExit);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(7, 1253);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1970, 71);
+            this.panel9.TabIndex = 10;
+            // 
+            // LocateBtnExit
+            // 
+            this.LocateBtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LocateBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.LocateBtnExit.Location = new System.Drawing.Point(1814, 8);
+            this.LocateBtnExit.Margin = new System.Windows.Forms.Padding(7);
+            this.LocateBtnExit.Name = "LocateBtnExit";
+            this.LocateBtnExit.Size = new System.Drawing.Size(149, 56);
+            this.LocateBtnExit.TabIndex = 9;
+            this.LocateBtnExit.Text = "Exit";
+            this.LocateBtnExit.UseVisualStyleBackColor = false;
+            this.LocateBtnExit.Click += new System.EventHandler(this.LocateBtnExit_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -972,13 +709,14 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.Controls.Add(this.label17, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(7, 7);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(974, 33);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1970, 74);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // label17
@@ -990,9 +728,10 @@
             this.label17.Enabled = false;
             this.label17.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label17.Location = new System.Drawing.Point(327, 0);
+            this.label17.Location = new System.Drawing.Point(663, 0);
+            this.label17.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(318, 33);
+            this.label17.Size = new System.Drawing.Size(642, 74);
             this.label17.TabIndex = 3;
             this.label17.Text = "Locate Incident/Request";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1003,74 +742,40 @@
             this.tabPage5.Controls.Add(this.panel18);
             this.tabPage5.Controls.Add(this.panel19);
             this.tabPage5.Controls.Add(this.panel20);
-            this.tabPage5.Location = new System.Drawing.Point(4, 28);
+            this.tabPage5.Controls.Add(this.panel2);
+            this.tabPage5.Location = new System.Drawing.Point(10, 58);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(980, 610);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(7);
+            this.tabPage5.Size = new System.Drawing.Size(1984, 1331);
             this.tabPage5.TabIndex = 8;
             this.tabPage5.Text = "Close/Escalate";
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.panel2);
             this.panel18.Controls.Add(this.groupBox14);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(3, 345);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel18.Location = new System.Drawing.Point(7, 727);
+            this.panel18.Margin = new System.Windows.Forms.Padding(7);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(974, 261);
+            this.panel18.Size = new System.Drawing.Size(1970, 521);
             this.panel18.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.closeBtnExit);
-            this.panel2.Controls.Add(this.closeBtnSave);
-            this.panel2.Location = new System.Drawing.Point(6, 215);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(960, 41);
-            this.panel2.TabIndex = 3;
-            // 
-            // closeBtnExit
-            // 
-            this.closeBtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.closeBtnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.closeBtnExit.Location = new System.Drawing.Point(826, 2);
-            this.closeBtnExit.Name = "closeBtnExit";
-            this.closeBtnExit.Size = new System.Drawing.Size(117, 34);
-            this.closeBtnExit.TabIndex = 2;
-            this.closeBtnExit.Text = "Exit";
-            this.closeBtnExit.UseVisualStyleBackColor = false;
-            this.closeBtnExit.Click += new System.EventHandler(this.closeBtnExit_Click);
-            // 
-            // closeBtnSave
-            // 
-            this.closeBtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.closeBtnSave.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtnSave.Location = new System.Drawing.Point(694, 2);
-            this.closeBtnSave.Name = "closeBtnSave";
-            this.closeBtnSave.Size = new System.Drawing.Size(117, 34);
-            this.closeBtnSave.TabIndex = 0;
-            this.closeBtnSave.Text = "Save";
-            this.closeBtnSave.UseVisualStyleBackColor = false;
-            this.closeBtnSave.Click += new System.EventHandler(this.closeBtnSave_Click);
             // 
             // groupBox14
             // 
-            this.groupBox14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox14.BackColor = System.Drawing.Color.White;
             this.groupBox14.Controls.Add(this.escPnlEsclTo);
             this.groupBox14.Controls.Add(this.closeTxtMessage);
             this.groupBox14.Controls.Add(this.label51);
             this.groupBox14.Controls.Add(this.label52);
             this.groupBox14.Controls.Add(this.groupBox15);
+            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(963, 209);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBox14.Size = new System.Drawing.Size(1970, 521);
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Close/Escalate a call";
@@ -1080,30 +785,30 @@
             this.escPnlEsclTo.Controls.Add(this.clsEscalatedTo);
             this.escPnlEsclTo.Controls.Add(this.label2);
             this.escPnlEsclTo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.escPnlEsclTo.Location = new System.Drawing.Point(367, 37);
-            this.escPnlEsclTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.escPnlEsclTo.Location = new System.Drawing.Point(856, 83);
+            this.escPnlEsclTo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.escPnlEsclTo.Name = "escPnlEsclTo";
-            this.escPnlEsclTo.Size = new System.Drawing.Size(272, 58);
+            this.escPnlEsclTo.Size = new System.Drawing.Size(635, 96);
             this.escPnlEsclTo.TabIndex = 11;
             this.escPnlEsclTo.Visible = false;
             // 
             // clsEscalatedTo
             // 
             this.clsEscalatedTo.FormattingEnabled = true;
-            this.clsEscalatedTo.Location = new System.Drawing.Point(123, 18);
-            this.clsEscalatedTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clsEscalatedTo.Location = new System.Drawing.Point(287, 29);
+            this.clsEscalatedTo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.clsEscalatedTo.Name = "clsEscalatedTo";
-            this.clsEscalatedTo.Size = new System.Drawing.Size(142, 26);
+            this.clsEscalatedTo.Size = new System.Drawing.Size(326, 48);
             this.clsEscalatedTo.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(26, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 18);
+            this.label2.Size = new System.Drawing.Size(205, 40);
             this.label2.TabIndex = 10;
             this.label2.Text = "Escalate To: ";
             // 
@@ -1111,28 +816,31 @@
             // 
             this.closeTxtMessage.BackColor = System.Drawing.SystemColors.Control;
             this.closeTxtMessage.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeTxtMessage.Location = new System.Drawing.Point(4, 123);
+            this.closeTxtMessage.Location = new System.Drawing.Point(9, 252);
+            this.closeTxtMessage.Margin = new System.Windows.Forms.Padding(7);
             this.closeTxtMessage.Multiline = true;
             this.closeTxtMessage.Name = "closeTxtMessage";
-            this.closeTxtMessage.Size = new System.Drawing.Size(956, 82);
+            this.closeTxtMessage.Size = new System.Drawing.Size(1934, 218);
             this.closeTxtMessage.TabIndex = 9;
             // 
             // label51
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(252, 102);
+            this.label51.Location = new System.Drawing.Point(961, 205);
+            this.label51.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(453, 18);
+            this.label51.Size = new System.Drawing.Size(981, 40);
             this.label51.TabIndex = 2;
             this.label51.Text = "NOT less than 20 Characters and NOT more than a 100 Characters";
             // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(8, 101);
+            this.label52.Location = new System.Drawing.Point(21, 203);
+            this.label52.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(211, 19);
+            this.label52.Size = new System.Drawing.Size(469, 43);
             this.label52.TabIndex = 1;
             this.label52.Text = "Close/Escalate Message:";
             // 
@@ -1140,9 +848,11 @@
             // 
             this.groupBox15.Controls.Add(this.closeRadEscalate);
             this.groupBox15.Controls.Add(this.closeRadClose);
-            this.groupBox15.Location = new System.Drawing.Point(6, 26);
+            this.groupBox15.Location = new System.Drawing.Point(14, 58);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(314, 68);
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBox15.Size = new System.Drawing.Size(733, 123);
             this.groupBox15.TabIndex = 0;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Close/Escalate";
@@ -1151,9 +861,10 @@
             // 
             this.closeRadEscalate.AutoSize = true;
             this.closeRadEscalate.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeRadEscalate.Location = new System.Drawing.Point(177, 26);
+            this.closeRadEscalate.Location = new System.Drawing.Point(413, 58);
+            this.closeRadEscalate.Margin = new System.Windows.Forms.Padding(7);
             this.closeRadEscalate.Name = "closeRadEscalate";
-            this.closeRadEscalate.Size = new System.Drawing.Size(79, 22);
+            this.closeRadEscalate.Size = new System.Drawing.Size(167, 44);
             this.closeRadEscalate.TabIndex = 1;
             this.closeRadEscalate.Text = "Escalate";
             this.closeRadEscalate.UseVisualStyleBackColor = true;
@@ -1164,9 +875,10 @@
             this.closeRadClose.AutoSize = true;
             this.closeRadClose.Checked = true;
             this.closeRadClose.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeRadClose.Location = new System.Drawing.Point(6, 26);
+            this.closeRadClose.Location = new System.Drawing.Point(14, 58);
+            this.closeRadClose.Margin = new System.Windows.Forms.Padding(7);
             this.closeRadClose.Name = "closeRadClose";
-            this.closeRadClose.Size = new System.Drawing.Size(60, 22);
+            this.closeRadClose.Size = new System.Drawing.Size(126, 44);
             this.closeRadClose.TabIndex = 0;
             this.closeRadClose.TabStop = true;
             this.closeRadClose.Text = "Close";
@@ -1180,9 +892,10 @@
             this.panel19.Controls.Add(this.label54);
             this.panel19.Controls.Add(this.groupBox16);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(3, 44);
+            this.panel19.Location = new System.Drawing.Point(7, 98);
+            this.panel19.Margin = new System.Windows.Forms.Padding(7);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(974, 301);
+            this.panel19.Size = new System.Drawing.Size(1970, 629);
             this.panel19.TabIndex = 1;
             // 
             // closeComboUnikNo
@@ -1192,17 +905,19 @@
             this.closeComboUnikNo.BackColor = System.Drawing.SystemColors.Control;
             this.closeComboUnikNo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeComboUnikNo.FormattingEnabled = true;
-            this.closeComboUnikNo.Location = new System.Drawing.Point(183, 11);
+            this.closeComboUnikNo.Location = new System.Drawing.Point(303, 25);
+            this.closeComboUnikNo.Margin = new System.Windows.Forms.Padding(7);
             this.closeComboUnikNo.Name = "closeComboUnikNo";
-            this.closeComboUnikNo.Size = new System.Drawing.Size(274, 26);
+            this.closeComboUnikNo.Size = new System.Drawing.Size(389, 48);
             this.closeComboUnikNo.TabIndex = 9;
             // 
             // closeBtnSearch
             // 
             this.closeBtnSearch.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtnSearch.Location = new System.Drawing.Point(490, 11);
+            this.closeBtnSearch.Location = new System.Drawing.Point(749, 20);
+            this.closeBtnSearch.Margin = new System.Windows.Forms.Padding(7);
             this.closeBtnSearch.Name = "closeBtnSearch";
-            this.closeBtnSearch.Size = new System.Drawing.Size(75, 30);
+            this.closeBtnSearch.Size = new System.Drawing.Size(149, 56);
             this.closeBtnSearch.TabIndex = 3;
             this.closeBtnSearch.Text = "Search";
             this.closeBtnSearch.UseVisualStyleBackColor = true;
@@ -1212,14 +927,17 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(8, 11);
+            this.label54.Location = new System.Drawing.Point(19, 25);
+            this.label54.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(114, 18);
+            this.label54.Size = new System.Drawing.Size(240, 40);
             this.label54.TabIndex = 1;
-            this.label54.Text = "Unique Number:";
+            this.label54.Text = "Ticket Number:";
             // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.textBox1);
+            this.groupBox16.Controls.Add(this.label1);
             this.groupBox16.Controls.Add(this.closeTxtDescription);
             this.groupBox16.Controls.Add(this.closeTxtAssignedTo);
             this.groupBox16.Controls.Add(this.label55);
@@ -1229,38 +947,64 @@
             this.groupBox16.Controls.Add(this.label57);
             this.groupBox16.Controls.Add(this.label58);
             this.groupBox16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(6, 48);
+            this.groupBox16.Location = new System.Drawing.Point(14, 107);
+            this.groupBox16.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(966, 246);
+            this.groupBox16.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBox16.Size = new System.Drawing.Size(1941, 471);
             this.groupBox16.TabIndex = 0;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Client Information";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(255, 147);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(424, 47);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 150);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(220, 40);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Submitted by:";
+            // 
             // closeTxtDescription
             // 
-            this.closeTxtDescription.Location = new System.Drawing.Point(6, 164);
+            this.closeTxtDescription.Location = new System.Drawing.Point(14, 272);
+            this.closeTxtDescription.Margin = new System.Windows.Forms.Padding(7);
             this.closeTxtDescription.Multiline = true;
             this.closeTxtDescription.Name = "closeTxtDescription";
             this.closeTxtDescription.ReadOnly = true;
-            this.closeTxtDescription.Size = new System.Drawing.Size(960, 79);
+            this.closeTxtDescription.Size = new System.Drawing.Size(1908, 171);
             this.closeTxtDescription.TabIndex = 8;
             // 
             // closeTxtAssignedTo
             // 
             this.closeTxtAssignedTo.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeTxtAssignedTo.Location = new System.Drawing.Point(672, 74);
+            this.closeTxtAssignedTo.Location = new System.Drawing.Point(970, 143);
+            this.closeTxtAssignedTo.Margin = new System.Windows.Forms.Padding(7);
             this.closeTxtAssignedTo.Name = "closeTxtAssignedTo";
             this.closeTxtAssignedTo.ReadOnly = true;
-            this.closeTxtAssignedTo.Size = new System.Drawing.Size(294, 25);
+            this.closeTxtAssignedTo.Size = new System.Drawing.Size(424, 47);
             this.closeTxtAssignedTo.TabIndex = 7;
             // 
             // label55
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(520, 77);
+            this.label55.Location = new System.Drawing.Point(754, 147);
+            this.label55.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(93, 18);
+            this.label55.Size = new System.Drawing.Size(205, 40);
             this.label55.TabIndex = 6;
             this.label55.Text = "Assigned To:";
             // 
@@ -1269,38 +1013,42 @@
             this.closeTxtAssignedBy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.closeTxtAssignedBy.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeTxtAssignedBy.Location = new System.Drawing.Point(672, 31);
+            this.closeTxtAssignedBy.Location = new System.Drawing.Point(970, 76);
+            this.closeTxtAssignedBy.Margin = new System.Windows.Forms.Padding(7);
             this.closeTxtAssignedBy.Name = "closeTxtAssignedBy";
             this.closeTxtAssignedBy.ReadOnly = true;
-            this.closeTxtAssignedBy.Size = new System.Drawing.Size(289, 25);
+            this.closeTxtAssignedBy.Size = new System.Drawing.Size(424, 47);
             this.closeTxtAssignedBy.TabIndex = 6;
             // 
             // label56
             // 
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(520, 34);
+            this.label56.Location = new System.Drawing.Point(754, 76);
+            this.label56.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(91, 18);
+            this.label56.Size = new System.Drawing.Size(202, 40);
             this.label56.TabIndex = 5;
             this.label56.Text = "Assigned by:";
             // 
             // closeTxtType
             // 
             this.closeTxtType.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeTxtType.Location = new System.Drawing.Point(183, 31);
+            this.closeTxtType.Location = new System.Drawing.Point(159, 76);
+            this.closeTxtType.Margin = new System.Windows.Forms.Padding(7);
             this.closeTxtType.Name = "closeTxtType";
             this.closeTxtType.ReadOnly = true;
-            this.closeTxtType.Size = new System.Drawing.Size(274, 25);
+            this.closeTxtType.Size = new System.Drawing.Size(520, 47);
             this.closeTxtType.TabIndex = 5;
             // 
             // label57
             // 
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(8, 127);
+            this.label57.Location = new System.Drawing.Point(19, 216);
+            this.label57.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(83, 18);
+            this.label57.Size = new System.Drawing.Size(191, 40);
             this.label57.TabIndex = 4;
             this.label57.Text = "Description:";
             // 
@@ -1308,9 +1056,10 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(8, 34);
+            this.label58.Location = new System.Drawing.Point(19, 76);
+            this.label58.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(47, 18);
+            this.label58.Size = new System.Drawing.Size(99, 40);
             this.label58.TabIndex = 3;
             this.label58.Text = "Type:";
             // 
@@ -1318,9 +1067,10 @@
             // 
             this.panel20.Controls.Add(this.label60);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(3, 3);
+            this.panel20.Location = new System.Drawing.Point(7, 7);
+            this.panel20.Margin = new System.Windows.Forms.Padding(7);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(974, 41);
+            this.panel20.Size = new System.Drawing.Size(1970, 91);
             this.panel20.TabIndex = 0;
             // 
             // label60
@@ -1331,20 +1081,62 @@
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label60.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label60.Location = new System.Drawing.Point(347, 7);
+            this.label60.Location = new System.Drawing.Point(574, 11);
+            this.label60.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(377, 27);
+            this.label60.Size = new System.Drawing.Size(831, 59);
             this.label60.TabIndex = 0;
             this.label60.Text = "Close/Escale incident or Request";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.closeBtnExit);
+            this.panel2.Controls.Add(this.closeBtnSave);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(7, 1248);
+            this.panel2.Margin = new System.Windows.Forms.Padding(7);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1970, 76);
+            this.panel2.TabIndex = 3;
+            // 
+            // closeBtnExit
+            // 
+            this.closeBtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtnExit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.closeBtnExit.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtnExit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.closeBtnExit.Location = new System.Drawing.Point(1799, 16);
+            this.closeBtnExit.Margin = new System.Windows.Forms.Padding(7);
+            this.closeBtnExit.Name = "closeBtnExit";
+            this.closeBtnExit.Size = new System.Drawing.Size(149, 56);
+            this.closeBtnExit.TabIndex = 2;
+            this.closeBtnExit.Text = "Exit";
+            this.closeBtnExit.UseVisualStyleBackColor = false;
+            this.closeBtnExit.Click += new System.EventHandler(this.closeBtnExit_Click);
+            // 
+            // closeBtnSave
+            // 
+            this.closeBtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.closeBtnSave.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtnSave.Location = new System.Drawing.Point(1599, 13);
+            this.closeBtnSave.Margin = new System.Windows.Forms.Padding(7);
+            this.closeBtnSave.Name = "closeBtnSave";
+            this.closeBtnSave.Size = new System.Drawing.Size(152, 56);
+            this.closeBtnSave.TabIndex = 0;
+            this.closeBtnSave.Text = "Save";
+            this.closeBtnSave.UseVisualStyleBackColor = false;
+            this.closeBtnSave.Click += new System.EventHandler(this.closeBtnSave_Click);
             // 
             // tabLogs
             // 
             this.tabLogs.Controls.Add(this.pnlLog);
-            this.tabLogs.Location = new System.Drawing.Point(4, 28);
-            this.tabLogs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabLogs.Location = new System.Drawing.Point(10, 58);
+            this.tabLogs.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabLogs.Name = "tabLogs";
-            this.tabLogs.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabLogs.Size = new System.Drawing.Size(980, 610);
+            this.tabLogs.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabLogs.Size = new System.Drawing.Size(1984, 1331);
             this.tabLogs.TabIndex = 9;
             this.tabLogs.Text = "Logs";
             this.tabLogs.UseVisualStyleBackColor = true;
@@ -1355,27 +1147,30 @@
             this.pnlLog.Controls.Add(this.txtLog);
             this.pnlLog.Controls.Add(this.panel4);
             this.pnlLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLog.Location = new System.Drawing.Point(2, 2);
+            this.pnlLog.Location = new System.Drawing.Point(5, 4);
+            this.pnlLog.Margin = new System.Windows.Forms.Padding(7);
             this.pnlLog.Name = "pnlLog";
-            this.pnlLog.Size = new System.Drawing.Size(976, 606);
+            this.pnlLog.Size = new System.Drawing.Size(1974, 1323);
             this.pnlLog.TabIndex = 2;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.button1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 568);
+            this.panel5.Location = new System.Drawing.Point(0, 1252);
+            this.panel5.Margin = new System.Windows.Forms.Padding(7);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(976, 38);
+            this.panel5.Size = new System.Drawing.Size(1974, 71);
             this.panel5.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Location = new System.Drawing.Point(843, 3);
+            this.button1.Location = new System.Drawing.Point(1809, 9);
+            this.button1.Margin = new System.Windows.Forms.Padding(7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 34);
+            this.button1.Size = new System.Drawing.Size(149, 56);
             this.button1.TabIndex = 10;
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = false;
@@ -1384,12 +1179,13 @@
             // txtLog
             // 
             this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLog.Location = new System.Drawing.Point(0, 38);
+            this.txtLog.Location = new System.Drawing.Point(0, 71);
+            this.txtLog.Margin = new System.Windows.Forms.Padding(7);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtLog.Size = new System.Drawing.Size(976, 568);
+            this.txtLog.Size = new System.Drawing.Size(1974, 1252);
             this.txtLog.TabIndex = 0;
             // 
             // panel4
@@ -1398,15 +1194,17 @@
             this.panel4.Controls.Add(this.btnErrLog);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(7);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(976, 38);
+            this.panel4.Size = new System.Drawing.Size(1974, 71);
             this.panel4.TabIndex = 1;
             // 
             // btnLogLogs
             // 
-            this.btnLogLogs.Location = new System.Drawing.Point(165, 3);
+            this.btnLogLogs.Location = new System.Drawing.Point(340, 10);
+            this.btnLogLogs.Margin = new System.Windows.Forms.Padding(7);
             this.btnLogLogs.Name = "btnLogLogs";
-            this.btnLogLogs.Size = new System.Drawing.Size(153, 30);
+            this.btnLogLogs.Size = new System.Drawing.Size(312, 49);
             this.btnLogLogs.TabIndex = 1;
             this.btnLogLogs.Text = "Show Login Logs";
             this.btnLogLogs.UseVisualStyleBackColor = true;
@@ -1414,9 +1212,10 @@
             // 
             // btnErrLog
             // 
-            this.btnErrLog.Location = new System.Drawing.Point(6, 3);
+            this.btnErrLog.Location = new System.Drawing.Point(14, 10);
+            this.btnErrLog.Margin = new System.Windows.Forms.Padding(7);
             this.btnErrLog.Name = "btnErrLog";
-            this.btnErrLog.Size = new System.Drawing.Size(153, 30);
+            this.btnErrLog.Size = new System.Drawing.Size(312, 49);
             this.btnErrLog.TabIndex = 0;
             this.btnErrLog.Text = "Show Error Logs";
             this.btnErrLog.UseVisualStyleBackColor = true;
@@ -1424,17 +1223,18 @@
             // 
             // TicketForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(988, 665);
+            this.ClientSize = new System.Drawing.Size(2004, 1448);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "TicketForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketsLogger";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TicketForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1443,34 +1243,24 @@
             this.tabPage3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel17.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel9.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.escPnlEsclTo.ResumeLayout(false);
@@ -1483,6 +1273,7 @@
             this.groupBox16.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.tabLogs.ResumeLayout(false);
             this.pnlLog.ResumeLayout(false);
             this.pnlLog.PerformLayout();
@@ -1517,45 +1308,21 @@
         private System.Windows.Forms.Button RecBtnClear;
         private System.Windows.Forms.Button RecBtnExit;
         private System.Windows.Forms.ComboBox recComboAssignedTo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.ComboBox recComboUnikNo;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Button recBtnSearch;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox recTxtContactNo;
-        private System.Windows.Forms.TextBox recTxtSurname;
-        private System.Windows.Forms.TextBox recTxtName;
-        private System.Windows.Forms.TextBox recTxtEmail;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox recTxtUnit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox recTxtFloorNo;
-        private System.Windows.Forms.TextBox recTxtBuilding;
-        private System.Windows.Forms.TextBox recTxtDept;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.RadioButton recRadRequest;
         private System.Windows.Forms.RadioButton recRadIncident;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button LocateBtnExit;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox locComboUnikNo;
         private System.Windows.Forms.Button locBtnShowAll;
@@ -1602,5 +1369,9 @@
         private System.Windows.Forms.Button btnErrLog;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.ToolStripMenuItem configurationsToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

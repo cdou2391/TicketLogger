@@ -83,6 +83,7 @@ namespace TicketsLogger
                                     Department= table.Rows[0]["Department"].ToString(),
                                     Unit= table.Rows[0]["Unit"].ToString()
                                 };
+                                MessageBox.Show("Logged in");
                                 TicketForm ticketFrm = new TicketForm();
                                 ticketFrm.Show();
                                 new loginLogs(Global.Staff.Surname + " " + Global.Staff.Name,
@@ -103,8 +104,10 @@ namespace TicketsLogger
                                     Department = table.Rows[0]["Department"].ToString(),
                                     Unit = table.Rows[0]["Unit"].ToString()
                                 };
+                                MessageBox.Show("Logged in");
                                 TicketForm ticketFrm = new TicketForm();
                                 ticketFrm.Show();
+                                
                                 new loginLogs(Global.Staff.Surname + " " + Global.Staff.Name,
                                     Global.Staff.ID, Global.Staff.Email, Global.Staff.Department);
                                 this.Hide();
