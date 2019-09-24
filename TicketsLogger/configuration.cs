@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace TicketsLogger
 {
@@ -20,7 +21,8 @@ namespace TicketsLogger
 
         private void configuration_Load(object sender, EventArgs e)
         {
-
+            LoadConfig();
+            MessageBox.Show(configurations.Email);
         }
         // Global Variables
         static string APPDATA_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); // AppData folder
@@ -28,7 +30,7 @@ namespace TicketsLogger
         static string CFGFILE_PATH = Path.Combine(CFGFOLDER_PATH, "config.txt");   // Path for config.txt file
         string[] CFG_STR_DELIM = new string[] { " = " }; // Config file string delimiter
         configurations configurations;    // Holds settings for 
-        private void LoadConfig()
+        public void LoadConfig()
         {
             // Does the config folder not exist?
             if (!Directory.Exists(CFGFOLDER_PATH))
@@ -46,7 +48,8 @@ namespace TicketsLogger
 
             string[] cfgDefaults = new string[] { "List Index" + CFG_STR_DELIM[0] + "0",
                                                   "True/False" + CFG_STR_DELIM[0] + "true",
-                                                  "String Value" + CFG_STR_DELIM[0] + "Default Text"};
+                                                  "Email" + CFG_STR_DELIM[0] + "Default Text",
+                                                  "Password" + CFG_STR_DELIM[0] + "Default Text"};
 
             foreach (string setting in cfgDefaults)
             {
@@ -87,7 +90,7 @@ namespace TicketsLogger
             {
                 string settingName = setting[settingNameIndex];
 
-                // Read the setting name and update corresponding UserPreference value
+                // Read the setting name and update corresponding configuration value
                 switch (settingName)
                 {
                     case "List Index":
@@ -100,9 +103,14 @@ namespace TicketsLogger
                             configurations.TrueFalse = bool.Parse(setting[settingValueIndex]);
                             break;
                         }
-                    case "String Value":
+                    case "Email":
                         {
-                            configurations.StringValue = setting[settingValueIndex];
+                            configurations.Email = setting[settingValueIndex];
+                            break;
+                        }
+                    case "Password":
+                        {
+                            configurations.Password = setting[settingValueIndex];
                             break;
                         }
                     // Default statement for invalid setting name
@@ -134,19 +142,22 @@ namespace TicketsLogger
 
             // Is the TrueFalse value true?
             if (configurations.TrueFalse == true)
-                radioButton1.Checked = true;
-            else
-                radioButton2.Checked = true;
+                radGmail.Checked = true;
 
-            textBox2.Text = configurations.StringValue;
+            else
+                radOutlook.Checked = true;
+
+            txtSystemEmail.Text = configurations.Email;
+            txtPassword.Text = configurations.Password;
 
             cfgReader.Close();
         }
         private void SaveConfig()
         {
             configurations.ListIndex = listBox1.SelectedIndex;
-            configurations.TrueFalse = radioButton2.Checked;
-            configurations.StringValue = textBox2.Text;
+            configurations.TrueFalse = radOutlook.Checked;
+            configurations.Email = txtSystemEmail.Text;
+            configurations.Password = txtPassword.Text;
 
             UpdateConfig();
         }
@@ -158,7 +169,9 @@ namespace TicketsLogger
 
             cfgValues.Add("List Index" + CFG_STR_DELIM[0] + configurations.ListIndex.ToString());
             cfgValues.Add("True/False" + CFG_STR_DELIM[0] + configurations.TrueFalse.ToString());
-            cfgValues.Add("String Value" + CFG_STR_DELIM[0] + configurations.StringValue);
+            cfgValues.Add("Email" + CFG_STR_DELIM[0] + configurations.Email);
+            cfgValues.Add("Password" + CFG_STR_DELIM[0] + configurations.Password);
+
 
             foreach (string setting in cfgValues)
                 cfgUpdater.WriteLine(setting);
@@ -174,6 +187,21 @@ namespace TicketsLogger
         private void roundedButton1_Click(object sender, EventArgs e)
         {
             SaveConfig();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            LoadConfig();
+            SendEmail sendE = new SendEmail();
+            void threadStart()
+            {
+                sendE.sendEmail("rugambacedric@gmail.com",
+                "rugced23@gmail.com","rugambacedric@gmail.com", "clientNames",
+                "callDesc", "TicketNum", "callType",
+                "callStatus", "callPriority", "emailMsg");
+            }
+            Thread thread = new Thread(threadStart);
+            thread.Start();
         }
     }
 }

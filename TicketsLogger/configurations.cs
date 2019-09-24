@@ -25,11 +25,17 @@ namespace TicketsLogger
             set { _TrueFalse = value; }
         }
 
-        internal string _StringValue;
-        public string StringValue
+        internal string _Email;
+        internal string _Password;
+        public string Email
         {
-            get { return _StringValue; }
-            set { _StringValue = value; }
+            get { return _Email; }
+            set { _Email = value; }
+        }
+        public string Password
+        {
+            get { return _Password; }
+            set { _Password = value; }
         }
     }
 }

@@ -26,6 +26,8 @@ namespace TicketsLogger
             string callPrior = callPriority;
             string msgIntro = introMsg;
 
+            configurations conf = new configurations();
+
             using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
             {
                 conn.Open();
@@ -46,7 +48,8 @@ namespace TicketsLogger
                             //string orgEmail = "rugced23@gmail.com"; reader2["email"].ToString();
                             //var toAddress2 = new MailAddress(orgEmail, "From " + clientOrgName);
                             //var toAddress3 = new MailAddress(client, "From " + clientOrgName);
-                            var fromAddress = new MailAddress(staff, Global.Staff.Name + " " + Global.Staff.Surname);
+                            MessageBox.Show(conf.Email);
+                            var fromAddress = new MailAddress(conf.Email, "Smart Care System");
                             if (inputBox.InputBox("Password", "Enter password:", ref inputPassword) == DialogResult.OK)
                             {
                                 //MessageBox.Show(value);
@@ -59,35 +62,59 @@ namespace TicketsLogger
                             body = (msgIntro+"\r\nTicket Number: " + referenceNum 
                                   + "\r\nCall Type: " + callT +"\r\nCall Description: " + callDesc 
                                   + "\r\nCall Status: " + callStat + "\r\nCall Priority: "+ callPrior);
-                            var smtp = new SmtpClient
+                            string smtpServer = "";
+                            try
                             {
-                                Host = "smtp.office365.com",
-                                Port = 587,
-                                EnableSsl = true,
-                                DeliveryMethod = SmtpDeliveryMethod.Network,
-                                Credentials = new NetworkCredential(fromAddress.Address, inputPassword),
-                                Timeout = 20000
-                            };
-                            using (var message1 = new MailMessage(fromAddress, toAddress)
-                            {
-                                Subject = subject,
-                                Body = body,
-                            })
-                            {
-                                ServicePointManager.ServerCertificateValidationCallback =
-                                                delegate (object s, X509Certificate certificate,
-                                                         X509Chain chain, SslPolicyErrors sslPolicyErrors)
-                                                { return true; };
-                                try
+                                if (conf.TrueFalse == false)
                                 {
-                                    smtp.Send(message1);
-                                    MessageBox.Show("Email to " + toAddress + " was succesfully sent!");
+                                    smtpServer = "smtp.gmail.com";
+                                    MessageBox.Show(conf.TrueFalse.ToString() + "gmail");
                                 }
-                                catch (Exception ex)
+                                else
                                 {
-                                    MessageBox.Show("Email to " + toAddress + " was no sent! \nError: " + ex.Message);
-                                    new LogWriter(ex);
+                                    smtpServer = "smtp.office365.com";
+                                    MessageBox.Show(conf.TrueFalse.ToString() + "outlook");
                                 }
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show("Please specify the mail server and save");
+                            }
+                            finally
+                            {
+                                var smtp = new SmtpClient
+                                {
+                                    Host = smtpServer,
+                                    Port = 587,
+                                    EnableSsl = true,
+                                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                                    Credentials = new NetworkCredential(fromAddress.Address, inputPassword),
+                                    Timeout = 20000
+                                };
+                                using (var message1 = new MailMessage(fromAddress, toAddress)
+                                {
+                                    Subject = subject,
+                                    Body = body,
+                                })
+                                {
+                                    ServicePointManager.ServerCertificateValidationCallback =
+                                                    delegate (object s, X509Certificate certificate,
+                                                             X509Chain chain, SslPolicyErrors sslPolicyErrors)
+                                                    { return true; };
+                                    try
+                                    {
+                                        smtp.Send(message1);
+                                        MessageBox.Show("Email to " + toAddress + " was succesfully sent!");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Email to " + toAddress + " was no sent! \nError: " + ex.Message);
+                                        new LogWriter(ex);
+                                    }
+                                }
+                            
+
+                            
                             
                             //try
                             //{

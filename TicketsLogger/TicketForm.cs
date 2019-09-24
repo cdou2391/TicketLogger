@@ -27,6 +27,7 @@ namespace TicketsLogger
             this.Close();
             Form1 logForm = new Form1();
             logForm.Show();
+
         }
 
         
@@ -36,6 +37,8 @@ namespace TicketsLogger
             LoadStaffUser();
             LoadCalls();
             this.Text =ProductName.ToString()+ " " + ProductVersion.ToString();
+            configuration conf = new configuration();
+            conf.LoadConfig();
             //if (Global.Staff.Role == "Admin")
             //{
             //    Tab1.TabPages.Insert(3,tabLogs);
