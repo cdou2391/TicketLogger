@@ -26,7 +26,7 @@ namespace TicketsLogger
         }
         // Global Variables
         static string APPDATA_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); // AppData folder
-        static string CFGFOLDER_PATH = Path.Combine(APPDATA_PATH, "Config File Example");     // Path for program config folder
+        static string CFGFOLDER_PATH = Path.Combine(APPDATA_PATH, "Ticket Logger");     // Path for program config folder
         static string CFGFILE_PATH = Path.Combine(CFGFOLDER_PATH, "config.txt");   // Path for config.txt file
         string[] CFG_STR_DELIM = new string[] { " = " }; // Config file string delimiter
         configurations configurations;    // Holds settings for 

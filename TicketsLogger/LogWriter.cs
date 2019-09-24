@@ -28,8 +28,8 @@ namespace TicketsLogger
             message += Environment.NewLine;
             message += "-----------------------------------------------------------";
             message += Environment.NewLine;
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + @"TicketsLogger\Logs\TicketsLogs.txt";
-            Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"TicketsLogger\Logs"));
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + @"TicketsLogger\Logs\TicketsLogs.txt";
+            Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"TicketsLogger\Logs"));
 
             string currentLog = String.Empty;
             try
