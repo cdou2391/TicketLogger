@@ -27,7 +27,7 @@ namespace TicketsLogger
                 message += Environment.NewLine;
                 message += "-----------------------------------------------------------";
 
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + @"TicketsLogger\Logs\loginLogs.txt";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + @"TicketsLogger\Logs\loginLogs.txt";
                 Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Car Management\Logs"));
 
                 using (StreamWriter writer = new StreamWriter(path, true))

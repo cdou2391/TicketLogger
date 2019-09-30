@@ -37,8 +37,8 @@ namespace TicketsLogger
             LoadStaffUser();
             LoadCalls();
             this.Text =ProductName.ToString()+ " " + ProductVersion.ToString();
-            configuration conf = new configuration();
-            conf.LoadConfig();
+            //configuration conf = new configuration();
+            //conf.LoadConfig();
             //if (Global.Staff.Role == "Admin")
             //{
             //    Tab1.TabPages.Insert(3,tabLogs);
@@ -573,7 +573,7 @@ namespace TicketsLogger
 
         private void configurationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            configuration conf = new configuration();
+            appConfigurations conf = new appConfigurations();
             conf.Show();
         }
     }
