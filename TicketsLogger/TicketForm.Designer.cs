@@ -108,6 +108,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.closeBtnExit = new System.Windows.Forms.Button();
             this.closeBtnSave = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Tab1.SuspendLayout();
@@ -133,6 +134,7 @@
             this.groupBox16.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -344,9 +346,8 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.label35);
-            this.panel8.Controls.Add(this.label34);
             this.panel8.Controls.Add(this.recTxtCallDescription);
+            this.panel8.Controls.Add(this.panel4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel8.Location = new System.Drawing.Point(0, 365);
             this.panel8.Margin = new System.Windows.Forms.Padding(7);
@@ -358,7 +359,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(898, 20);
+            this.label35.Location = new System.Drawing.Point(898, 19);
             this.label35.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(972, 40);
@@ -369,7 +370,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(14, 20);
+            this.label34.Location = new System.Drawing.Point(0, 16);
             this.label34.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(481, 43);
@@ -379,12 +380,13 @@
             // recTxtCallDescription
             // 
             this.recTxtCallDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.recTxtCallDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recTxtCallDescription.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtCallDescription.Location = new System.Drawing.Point(23, 89);
+            this.recTxtCallDescription.Location = new System.Drawing.Point(0, 77);
             this.recTxtCallDescription.Margin = new System.Windows.Forms.Padding(7);
             this.recTxtCallDescription.Multiline = true;
             this.recTxtCallDescription.Name = "recTxtCallDescription";
-            this.recTxtCallDescription.Size = new System.Drawing.Size(1917, 747);
+            this.recTxtCallDescription.Size = new System.Drawing.Size(1898, 795);
             this.recTxtCallDescription.TabIndex = 0;
             // 
             // recComboPriority
@@ -414,7 +416,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1898, 80);
             this.panel3.TabIndex = 10;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // RecBtnSave
             // 
@@ -1117,6 +1118,16 @@
             this.closeBtnSave.UseVisualStyleBackColor = false;
             this.closeBtnSave.Click += new System.EventHandler(this.closeBtnSave_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label35);
+            this.panel4.Controls.Add(this.label34);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1898, 77);
+            this.panel4.TabIndex = 3;
+            // 
             // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -1170,6 +1181,8 @@
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1256,5 +1269,6 @@
         private System.Windows.Forms.ToolStripMenuItem configurationsToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

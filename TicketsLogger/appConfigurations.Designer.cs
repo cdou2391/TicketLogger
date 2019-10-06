@@ -34,15 +34,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelEmail = new System.Windows.Forms.Label();
             this.panelLogs = new System.Windows.Forms.Panel();
+            this.txtLogs = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.activityLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtLogs = new System.Windows.Forms.TextBox();
             this.panelEmail = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,14 +113,26 @@
             // 
             // panelLogs
             // 
-            this.panelLogs.Controls.Add(this.menuStrip1);
             this.panelLogs.Controls.Add(this.txtLogs);
+            this.panelLogs.Controls.Add(this.menuStrip1);
             this.panelLogs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogs.Location = new System.Drawing.Point(343, 0);
             this.panelLogs.Margin = new System.Windows.Forms.Padding(7);
             this.panelLogs.Name = "panelLogs";
             this.panelLogs.Size = new System.Drawing.Size(1045, 872);
             this.panelLogs.TabIndex = 2;
+            // 
+            // txtLogs
+            // 
+            this.txtLogs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLogs.Location = new System.Drawing.Point(0, 49);
+            this.txtLogs.Margin = new System.Windows.Forms.Padding(7);
+            this.txtLogs.Multiline = true;
+            this.txtLogs.Name = "txtLogs";
+            this.txtLogs.ReadOnly = true;
+            this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLogs.Size = new System.Drawing.Size(1045, 823);
+            this.txtLogs.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -131,46 +144,36 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(14, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1045, 51);
+            this.menuStrip1.Size = new System.Drawing.Size(1045, 49);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // activityLogsToolStripMenuItem
             // 
             this.activityLogsToolStripMenuItem.Name = "activityLogsToolStripMenuItem";
-            this.activityLogsToolStripMenuItem.Size = new System.Drawing.Size(179, 43);
+            this.activityLogsToolStripMenuItem.Size = new System.Drawing.Size(179, 41);
             this.activityLogsToolStripMenuItem.Text = "Activity Logs";
             this.activityLogsToolStripMenuItem.Click += new System.EventHandler(this.activityLogsToolStripMenuItem_Click);
             // 
             // loginLogsToolStripMenuItem
             // 
             this.loginLogsToolStripMenuItem.Name = "loginLogsToolStripMenuItem";
-            this.loginLogsToolStripMenuItem.Size = new System.Drawing.Size(159, 43);
+            this.loginLogsToolStripMenuItem.Size = new System.Drawing.Size(159, 41);
             this.loginLogsToolStripMenuItem.Text = "Login Logs";
             this.loginLogsToolStripMenuItem.Click += new System.EventHandler(this.loginLogsToolStripMenuItem_Click);
             // 
             // errorLogsToolStripMenuItem
             // 
             this.errorLogsToolStripMenuItem.Name = "errorLogsToolStripMenuItem";
-            this.errorLogsToolStripMenuItem.Size = new System.Drawing.Size(149, 43);
+            this.errorLogsToolStripMenuItem.Size = new System.Drawing.Size(149, 41);
             this.errorLogsToolStripMenuItem.Text = "Error Logs";
             this.errorLogsToolStripMenuItem.Click += new System.EventHandler(this.errorLogsToolStripMenuItem_Click);
             // 
-            // txtLogs
-            // 
-            this.txtLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLogs.Location = new System.Drawing.Point(0, 0);
-            this.txtLogs.Margin = new System.Windows.Forms.Padding(7);
-            this.txtLogs.Multiline = true;
-            this.txtLogs.Name = "txtLogs";
-            this.txtLogs.ReadOnly = true;
-            this.txtLogs.Size = new System.Drawing.Size(1045, 872);
-            this.txtLogs.TabIndex = 1;
-            // 
             // panelEmail
             // 
-            this.panelEmail.Controls.Add(this.textBox1);
+            this.panelEmail.Controls.Add(this.btnEmail);
             this.panelEmail.Controls.Add(this.menuStrip2);
+            this.panelEmail.Controls.Add(this.textBox1);
             this.panelEmail.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelEmail.Location = new System.Drawing.Point(343, 410);
             this.panelEmail.Margin = new System.Windows.Forms.Padding(7);
@@ -181,12 +184,12 @@
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 49);
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Margin = new System.Windows.Forms.Padding(7);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(1045, 413);
+            this.textBox1.Size = new System.Drawing.Size(1045, 462);
             this.textBox1.TabIndex = 1;
             // 
             // menuStrip2
@@ -206,6 +209,16 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(276, 41);
             this.toolStripMenuItem1.Text = "Email Configurations";
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.Location = new System.Drawing.Point(326, 193);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(233, 74);
+            this.btnEmail.TabIndex = 2;
+            this.btnEmail.Text = "test email";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // appConfigurations
             // 
@@ -251,5 +264,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Button btnEmail;
     }
 }

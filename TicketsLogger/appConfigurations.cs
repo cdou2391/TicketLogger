@@ -112,5 +112,14 @@ namespace TicketsLogger
                 new LogWriter(ex);
             }
         }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            SendEmail sendE = new SendEmail();
+            sendE.sendEmail(Global.Staff.Email,
+                            "", "", "",
+                            "", "", "",
+                            "", "", "");
+        }
     }
 }

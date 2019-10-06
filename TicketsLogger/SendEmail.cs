@@ -25,8 +25,7 @@ namespace TicketsLogger
             string message = "";
             string callPrior = callPriority;
             string msgIntro = introMsg;
-
-            configurations conf = new configurations();
+            
 
             using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
             {
@@ -48,50 +47,40 @@ namespace TicketsLogger
                             //string orgEmail = "rugced23@gmail.com"; reader2["email"].ToString();
                             //var toAddress2 = new MailAddress(orgEmail, "From " + clientOrgName);
                             //var toAddress3 = new MailAddress(client, "From " + clientOrgName);
-                            MessageBox.Show(conf.Email);
-                            var fromAddress = new MailAddress(conf.Email, "Smart Care System");
                             if (inputBox.InputBox("Password", "Enter password:", ref inputPassword) == DialogResult.OK)
                             {
                                 //MessageBox.Show(value);
                                 //string fromPassword = inputPassword;
                             }
                             
-                            var toAddress = new MailAddress(tech, "");
+                            var toAddress = new MailAddress("rugced232gmail.com", "");
                             string subject = "New Ticket";
                             string body;
                             body = (msgIntro+"\r\nTicket Number: " + referenceNum 
                                   + "\r\nCall Type: " + callT +"\r\nCall Description: " + callDesc 
                                   + "\r\nCall Status: " + callStat + "\r\nCall Priority: "+ callPrior);
-                            string smtpServer = "";
+                            string smtpServer = Properties.Settings.Default.smtpGmail;
                             try
                             {
-                                if (conf.TrueFalse == false)
-                                {
-                                    smtpServer = "smtp.gmail.com";
-                                    MessageBox.Show(conf.TrueFalse.ToString() + "gmail");
-                                }
-                                else
-                                {
-                                    smtpServer = "smtp.office365.com";
-                                    MessageBox.Show(conf.TrueFalse.ToString() + "outlook");
-                                }
+                                smtpServer = Properties.Settings.Default.smtpGmail;
                             }
                             catch(Exception ex)
                             {
-                                MessageBox.Show("Please specify the mail server and save");
+                                MessageBox.Show("Please specify the mail server and save!");
                             }
                             finally
                             {
+                                string fromAddress = Properties.Settings.Default.emailAddress;
                                 var smtp = new SmtpClient
                                 {
                                     Host = smtpServer,
                                     Port = 587,
                                     EnableSsl = true,
                                     DeliveryMethod = SmtpDeliveryMethod.Network,
-                                    Credentials = new NetworkCredential(fromAddress.Address, inputPassword),
+                                    Credentials = new NetworkCredential(fromAddress, inputPassword),
                                     Timeout = 20000
                                 };
-                                using (var message1 = new MailMessage(fromAddress, toAddress)
+                                using (var message1 = new MailMessage(fromAddress, "rugced23@gmail.com")
                                 {
                                     Subject = subject,
                                     Body = body,

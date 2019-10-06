@@ -84,6 +84,7 @@ namespace TicketsLogger
                                     Unit= table.Rows[0]["Unit"].ToString()
                                 };
                                 MessageBox.Show("Logged in");
+                                new ActivityLogs("1", "2", "3");
                                 TicketForm ticketFrm = new TicketForm();
                                 ticketFrm.Show();
                                 new loginLogs(Global.Staff.Surname + " " + Global.Staff.Name,
@@ -105,6 +106,7 @@ namespace TicketsLogger
                                     Unit = table.Rows[0]["Unit"].ToString()
                                 };
                                 MessageBox.Show("Logged in");
+                                new ActivityLogs("1","2","3");
                                 TicketForm ticketFrm = new TicketForm();
                                 ticketFrm.Show();
                                 

@@ -513,45 +513,7 @@ namespace TicketsLogger
             profileFrm frmProfile = new profileFrm();
             frmProfile.Show();
         }
-
-        private void btnRefreshLog_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnErrLog_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + @"TicketsLogger\Logs\TicketsLogs.txt";
-                using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
-                {
-                    txtLog.Text = streamReader.ReadToEnd();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                new LogWriter(ex);
-            }
-        }
-
-        private void btnLogLogs_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + @"TicketsLogger\Logs\loginLogs.txt";
-                using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
-                {
-                    txtLog.Text = streamReader.ReadToEnd();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                new LogWriter(ex);
-            }
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -564,11 +526,6 @@ namespace TicketsLogger
             {
 
             }
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void configurationsToolStripMenuItem_Click(object sender, EventArgs e)
