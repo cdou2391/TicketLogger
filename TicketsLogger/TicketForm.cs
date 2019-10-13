@@ -25,7 +25,7 @@ namespace TicketsLogger
         private void logOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 logForm = new Form1();
+            login logForm = new login();
             logForm.Show();
 
         }
@@ -101,7 +101,7 @@ namespace TicketsLogger
                         ComboboxItem staffEmail = new ComboboxItem();
                         ComboboxItem staffNumber = new ComboboxItem();
                         staffEmail.Text = reader["email"].ToString();
-                        staffNumber.Text = reader["StaffID"].ToString();
+                        staffNumber.Text = reader["name"].ToString() +" " +reader["surname"].ToString();
                         recComboAssignedTo.Items.Add(staffEmail);
                         recComboUnikNo.Items.Add(staffNumber);
                     }
@@ -144,55 +144,55 @@ namespace TicketsLogger
                 new LogWriter(ex);
             }
         }
-        private void recBtnSearch_Click(object sender, EventArgs e)
-        {
-            //string refNum = recComboUnikNo.Text;
-            //int i;
-            //try
-            //{
-            //    if ((refNum.ToString().Length > 2))
-            //    {
-            //        if (int.TryParse(refNum, out i))
-            //        {
-            //            int id = Convert.ToInt32(refNum);
-            //            using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
-            //            {
-            //                conn.Open();
-            //                try
-            //                {
-            //                    using (SqlCommand cmd = new SqlCommand("SELECT * from Staff where StaffID = '" + id + "'", conn))
-            //                    {
-            //                        SqlDataReader reader = cmd.ExecuteReader();
-            //                        reader.Read();
-            //                        recTxtName.Text = reader["Name"].ToString();
-            //                        recTxtSurname.Text = reader["Surname"].ToString();
-            //                        recTxtEmail.Text = reader["Email"].ToString();
-            //                        recTxtDept.Text = reader["Department"].ToString();
-            //                        recTxtUnit.Text = reader["Unit"].ToString();
-            //                        recTxtBuilding.Text = reader["Building"].ToString();
-            //                        recTxtFloorNo.Text = reader["Floor"].ToString();
+        //private void recBtnSearch_Click(object sender, EventArgs e)
+        //{
+        //    string refNum = recComboUnikNo.Text;
+        //    int i;
+        //    try
+        //    {
+        //        if ((refNum.ToString().Length > 2))
+        //        {
+        //            if (int.TryParse(refNum, out i))
+        //            {
+        //                int id = Convert.ToInt32(refNum);
+        //                using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
+        //                {
+        //                    conn.Open();
+        //                    try
+        //                    {
+        //                        using (SqlCommand cmd = new SqlCommand("SELECT * from Staff where StaffID = '" + id + "'", conn))
+        //                        {
+        //                            SqlDataReader reader = cmd.ExecuteReader();
+        //                            reader.Read();
+        //                            recTxtName.Text = reader["Name"].ToString();
+        //                            recTxtSurname.Text = reader["Surname"].ToString();
+        //                            recTxtEmail.Text = reader["Email"].ToString();
+        //                            recTxtDept.Text = reader["Department"].ToString();
+        //                            recTxtUnit.Text = reader["Unit"].ToString();
+        //                            recTxtBuilding.Text = reader["Building"].ToString();
+        //                            recTxtFloorNo.Text = reader["Floor"].ToString();
 
-            //                        reader.Close();
-            //                    }
-            //                }
-            //                catch (Exception ex)
-            //                {
-            //                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //                    new LogWriter(ex);
-            //                    this.Close();
-            //                }
+        //                            reader.Close();
+        //                        }
+        //                    }
+        //                    catch (Exception ex)
+        //                    {
+        //                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                        new LogWriter(ex);
+        //                        this.Close();
+        //                    }
 
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    new LogWriter(ex);
-            //    this.Close();
-            //}
-        }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        new LogWriter(ex);
+        //        this.Close();
+        //    }
+        //}
 
         private void RecBtnSave_Click(object sender, EventArgs e)
         {
@@ -204,6 +204,7 @@ namespace TicketsLogger
             string callDateResolved = "Still in progress";
             string callAssignedBy = staffNames.Text;
             string callDescription = recTxtCallDescription.Text;
+            string callSubmitedBy = recComboUnikNo.Text;
 
             string techEmail = recComboAssignedTo.Text;
             //string clientEmail = recTxtEmail.Text;
@@ -237,7 +238,7 @@ namespace TicketsLogger
                     using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
                     {
                         conn.Open();
-                        using (SqlCommand cmd = new SqlCommand("INSERT INTO Tickets(TicketNumber,Type,CreatedBy,Priority,Description,CreatedDate,Status,ClosedDate,AssignedTo) VALUES(@TicketNumber,@Type,@CreatedBy,@Priority,@Description,@CreatedDate,@Status,@ClosedDate,@AssignedTo) ", conn))
+                        using (SqlCommand cmd = new SqlCommand("INSERT INTO Tickets(TicketNumber,Type,CreatedBy,Priority,Description,CreatedDate,Status,ClosedDate,AssignedTo,SubmitedBy) VALUES(@TicketNumber,@Type,@CreatedBy,@Priority,@Description,@CreatedDate,@Status,@ClosedDate,@AssignedTo,@SubmitedBy) ", conn))
                         {
                             cmd.Parameters.AddWithValue("@TicketNumber", TicketNum);
                             cmd.Parameters.AddWithValue("@Type", callType);
@@ -248,22 +249,23 @@ namespace TicketsLogger
                             cmd.Parameters.AddWithValue("@CreatedDate", callDateLogged);
                             cmd.Parameters.AddWithValue("@Status", callStatus);
                             cmd.Parameters.AddWithValue("@ClosedDate", callDateResolved);
+                            cmd.Parameters.AddWithValue("@SubmitedBy", callSubmitedBy);
 
                             cmd.ExecuteNonQuery();
 
                             SendEmail sendE = new SendEmail();
                             void threadStart()
                             {
-                                //sendE.sendEmail(Global.Staff.Email,
-                                //techEmail, clientEmail, clientNames,
-                                //callDesc, TicketNum, callType,
-                                //callStatus, callPriority, emailMsg);
+                                sendE.sendEmail(Global.Staff.Email,
+                                "rugced@yahoo.fr", "rugambacedric@gmail.com", "Rugamba Cedric",
+                                "Ticket", TicketNum, callType,
+                                callStatus, callPriority, emailMsg);
                             }
                             Thread thread = new Thread(threadStart);
                             thread.Start();
                         }
                     }
-                    //LoadCalls();
+                    LoadCalls();
                     //string techEmail = recComboAssignedTo.Text;
                     //string clientEmail = recTxtEmail.Text;
                     //string clientNames = recTxtSurname.Text + " " + recTxtName.Text;
@@ -282,6 +284,215 @@ namespace TicketsLogger
         }
 
         private void LocBtnContinue_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void locBtnShowAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadCalls();
+                DataTable table = new DataTable();
+                using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
+                {
+                    conn.Open();
+                    using (conn)
+                    {
+                        SqlDataAdapter reader = new SqlDataAdapter("SELECT * from Tickets", conn);
+                        DataSet ds = new DataSet();
+                        reader.Fill(ds);
+                        dataGridView1.VirtualMode = false;
+                        dataGridView1.Columns.Clear();
+                        dataGridView1.AutoGenerateColumns = true;
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Refresh();
+                    }
+                    try
+                    {
+
+                        for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
+                        {
+                            string status = dataGridView1.Rows[rows].Cells[6].Value.ToString();
+                            if (status == "Closed")
+                            {
+                                dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Yellow;
+                            }
+                            else if (status == "Escalated")
+                            {
+                                dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Red;
+                            }
+                            else if (status == "Opened")
+                            {
+                                dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Green;
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new LogWriter(ex);
+            }
+        }
+        
+
+        private void closeRadEscalate_Click(object sender, EventArgs e)
+        {
+            escPnlEsclTo.Visible = true;
+        }
+
+        private void closeRadClose_Click(object sender, EventArgs e)
+        {
+            escPnlEsclTo.Visible = false;
+        }
+
+        private void closeBtnSave_Click(object sender, EventArgs e)
+        {
+            string status;
+            if (closeTxtMessage.Text == "")
+            {
+                MessageBox.Show("Please provide a message");
+            }
+            else
+            {
+                if (closeRadClose.Checked == true)
+                {
+                    status = "Closed";
+                }
+                else
+                {
+                    status = "Escalated";
+                }
+                string callStatus = status;
+                string callDateResolved;
+                string ticketNum = closeComboUnikNo.Text;
+                string escalatedTo = clsEscalatedTo.Text;
+                string callType = closeTxtType.Text;
+                string closureReason = closeTxtMessage.Text;
+
+                if (status == "Closed")
+                {
+                    callDateResolved = DateTime.Now.ToString();
+                }
+                else
+                {
+                    callDateResolved = "Still in progress";
+                }
+                using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("update Tickets set Status= @callStatus , ClosedDate= @ClosedDate ,EscalatedTo= @escalatedTo,ClosureReason=@ClosureReason where TicketNumber = '" + ticketNum + "'", conn))
+                    {
+                        SendEmail sendE = new SendEmail();
+                        string emailMsg = "The ticket has been " + callStatus;
+                        void threadStart()
+                        {
+                            sendE.sendEmail(Global.Staff.Email,
+                            escalatedTo, "rugced23@gmail.com", "",
+                            closureReason, ticketNum, callType,
+                            callStatus, "", emailMsg);
+                        }
+                        Thread thread = new Thread(threadStart);
+                        thread.Start();
+
+                        cmd.Parameters.AddWithValue("@callStatus", callStatus);
+                        cmd.Parameters.AddWithValue("@ClosedDate", callDateResolved);
+                        cmd.Parameters.AddWithValue("@escalatedTo", escalatedTo);
+                        cmd.Parameters.AddWithValue("@ClosureReason", closureReason);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                
+                MessageBox.Show("Call sucessfully " + status + "!");
+            }
+        }
+
+        private void viewProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            profileFrm frmProfile = new profileFrm();
+            frmProfile.Show();
+        }
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("You are about to exit and log out of the application. Are you sure?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void configurationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            appConfigurations conf = new appConfigurations();
+            conf.Show();
+        }
+
+        private void closeComboUnikNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string refNum = closeComboUnikNo.Text;
+            if (refNum.ToString().Length > 2)
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand("SELECT * from Tickets where TicketNumber='" + refNum + "'", conn))
+                        {
+                            SqlDataReader reader = cmd.ExecuteReader();
+                            reader.Read();
+                            closeTxtType.Text = reader["type"].ToString();
+                            closeTxtDescription.Text = reader["description"].ToString();
+                            closeTxtAssignedTo.Text = reader["AssignedTo"].ToString();
+                            closeTxtAssignedBy.Text = reader["CreatedBy"].ToString();
+                            closeTxtSubmitedBy.Text = reader["SubmitedBy"].ToString();
+                            closeTxtStatus.Text = reader["Status"].ToString();
+                            closeTxtMessage.Text= reader["ClosureReason"].ToString(); 
+
+                            if (reader["Status"].ToString()=="Closed")
+                            {
+                                closeTxtMessage.Enabled = false;
+                                clsEscalatedTo.Enabled = false;
+                                closeRadEscalate.Enabled = false;
+                                closeRadClose.Enabled = false;
+                            }
+                            else
+                            {
+                                closeTxtMessage.Enabled = true;
+                                clsEscalatedTo.Enabled = true;
+                                closeRadEscalate.Enabled = true;
+                                closeRadClose.Enabled = true;
+                            }
+                            reader.Close();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    new LogWriter(ex);
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid reference number");
+            }
+        }
+
+        private void locComboUnikNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string refNum = locComboUnikNo.Text;
             try
@@ -347,191 +558,6 @@ namespace TicketsLogger
                 new LogWriter(ex);
                 this.Close();
             }
-        }
-
-        private void locBtnShowAll_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadCalls();
-                DataTable table = new DataTable();
-                using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
-                {
-                    conn.Open();
-                    using (conn)
-                    {
-                        SqlDataAdapter reader = new SqlDataAdapter("SELECT * from Tickets", conn);
-                        DataSet ds = new DataSet();
-                        reader.Fill(ds);
-                        dataGridView1.VirtualMode = false;
-                        dataGridView1.Columns.Clear();
-                        dataGridView1.AutoGenerateColumns = true;
-                        dataGridView1.DataSource = ds.Tables[0];
-                        dataGridView1.Refresh();
-                    }
-                    try
-                    {
-
-                        for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
-                        {
-                            string status = dataGridView1.Rows[rows].Cells[6].Value.ToString();
-                            if (status == "Closed")
-                            {
-                                dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Yellow;
-                            }
-                            else if (status == "Escalated")
-                            {
-                                dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Red;
-                            }
-                            else if (status == "Opened")
-                            {
-                                dataGridView1.Rows[rows].DefaultCellStyle.BackColor = Color.Green;
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                new LogWriter(ex);
-            }
-        }
-
-        private void closeBtnSearch_Click(object sender, EventArgs e)
-        {
-            string refNum = closeComboUnikNo.Text;
-            if (refNum.ToString().Length > 2)
-            {
-                try
-                {
-                    using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
-                    {
-                        conn.Open();
-                        using (SqlCommand cmd = new SqlCommand("SELECT * from Tickets where TicketNumber='" + refNum + "'", conn))
-                        {
-                            SqlDataReader reader = cmd.ExecuteReader();
-                            reader.Read();
-                            closeTxtType.Text = reader["type"].ToString();
-                            closeTxtDescription.Text = reader["description"].ToString();
-                            closeTxtAssignedTo.Text = reader["AssignedTo"].ToString();
-                            closeTxtAssignedBy.Text = reader["CreatedBy"].ToString();
-
-                            reader.Close();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    new LogWriter(ex);
-                    this.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid reference number");
-            }
-        }
-
-        private void closeRadEscalate_Click(object sender, EventArgs e)
-        {
-            escPnlEsclTo.Visible = true;
-        }
-
-        private void closeRadClose_Click(object sender, EventArgs e)
-        {
-            escPnlEsclTo.Visible = false;
-        }
-
-        private void closeBtnSave_Click(object sender, EventArgs e)
-        {
-            string status;
-            if (closeTxtMessage.Text == "")
-            {
-                MessageBox.Show("Please provide a message");
-            }
-            else
-            {
-                if (closeRadClose.Checked == true)
-                {
-                    status = "Closed";
-                }
-                else
-                {
-                    status = "Escalated";
-                }
-                string callStatus = status;
-                string statusDescription = closeTxtMessage.Text;
-                string callDateResolved;
-                string ticketNum = closeComboUnikNo.Text;
-                string escalatedTo = clsEscalatedTo.Text;
-                string callType = closeTxtType.Text;
-                if (status == "Closed")
-                {
-                    callDateResolved = DateTime.Now.ToString();
-                }
-                else
-                {
-                    callDateResolved = "Still in progress";
-                }
-                using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("update Tickets set Status= @callStatus ,Description=@statusDescription, ClosedDate= @ClosedDate ,EscalatedTo= @escalatedTo where TicketNumber = '" + ticketNum + "'", conn))
-                    {
-                        SendEmail sendE = new SendEmail();
-                        string emailMsg = "The ticket has been " + callStatus;
-                        void threadStart()
-                        {
-                            sendE.sendEmail(Global.Staff.Email,
-                            escalatedTo, "", "",
-                            statusDescription, ticketNum, callType,
-                            callStatus, "", emailMsg);
-                        }
-                        Thread thread = new Thread(threadStart);
-                        thread.Start();
-
-                        cmd.Parameters.AddWithValue("@callStatus", callStatus);
-                        cmd.Parameters.AddWithValue("@ClosedDate", callDateResolved);
-                        cmd.Parameters.AddWithValue("@statusDescription", statusDescription);
-                        cmd.Parameters.AddWithValue("@escalatedTo", escalatedTo);
-
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                
-                MessageBox.Show("Call sucessfully " + status + "!");
-            }
-        }
-
-        private void viewProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            profileFrm frmProfile = new profileFrm();
-            frmProfile.Show();
-        }
-        
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("You are about to exit and log out of the application. Are you sure?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dr == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
-            {
-
-            }
-        }
-
-        private void configurationsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            appConfigurations conf = new appConfigurations();
-            conf.Show();
         }
     }
 }

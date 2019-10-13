@@ -40,10 +40,19 @@
             this.loginLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelEmail = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCompany = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmdSmtp = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEmail = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -56,13 +65,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(343, 872);
+            this.panel1.Size = new System.Drawing.Size(343, 994);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -74,6 +84,8 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(343, 54);
             this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseClick);
             // 
             // labelLogs
             // 
@@ -97,6 +109,8 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(343, 54);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseClick);
             // 
             // labelEmail
             // 
@@ -119,7 +133,7 @@
             this.panelLogs.Location = new System.Drawing.Point(343, 0);
             this.panelLogs.Margin = new System.Windows.Forms.Padding(7);
             this.panelLogs.Name = "panelLogs";
-            this.panelLogs.Size = new System.Drawing.Size(1045, 872);
+            this.panelLogs.Size = new System.Drawing.Size(1045, 994);
             this.panelLogs.TabIndex = 2;
             // 
             // txtLogs
@@ -131,7 +145,7 @@
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.ReadOnly = true;
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(1045, 823);
+            this.txtLogs.Size = new System.Drawing.Size(1045, 945);
             this.txtLogs.TabIndex = 1;
             // 
             // menuStrip1
@@ -171,26 +185,120 @@
             // 
             // panelEmail
             // 
-            this.panelEmail.Controls.Add(this.btnEmail);
+            this.panelEmail.Controls.Add(this.txtCompany);
+            this.panelEmail.Controls.Add(this.label4);
+            this.panelEmail.Controls.Add(this.txtPassword);
+            this.panelEmail.Controls.Add(this.label3);
+            this.panelEmail.Controls.Add(this.txtEmail);
+            this.panelEmail.Controls.Add(this.label2);
+            this.panelEmail.Controls.Add(this.btnUpdate);
+            this.panelEmail.Controls.Add(this.button1);
+            this.panelEmail.Controls.Add(this.cmdSmtp);
+            this.panelEmail.Controls.Add(this.label1);
             this.panelEmail.Controls.Add(this.menuStrip2);
-            this.panelEmail.Controls.Add(this.textBox1);
             this.panelEmail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEmail.Location = new System.Drawing.Point(343, 410);
+            this.panelEmail.Location = new System.Drawing.Point(343, 532);
             this.panelEmail.Margin = new System.Windows.Forms.Padding(7);
             this.panelEmail.Name = "panelEmail";
             this.panelEmail.Size = new System.Drawing.Size(1045, 462);
             this.panelEmail.TabIndex = 3;
             // 
-            // textBox1
+            // txtCompany
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(1045, 462);
-            this.textBox1.TabIndex = 1;
+            this.txtCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompany.Location = new System.Drawing.Point(211, 63);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Size = new System.Drawing.Size(446, 35);
+            this.txtCompany.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 29);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Company:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(211, 209);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(446, 35);
+            this.txtPassword.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 211);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 29);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Password:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(211, 162);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(446, 35);
+            this.txtEmail.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 29);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Email:";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(730, 381);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(288, 52);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update Configurations";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 74);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmdSmtp
+            // 
+            this.cmdSmtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSmtp.FormattingEnabled = true;
+            this.cmdSmtp.Items.AddRange(new object[] {
+            "Office 365",
+            "Gmail"});
+            this.cmdSmtp.Location = new System.Drawing.Point(211, 112);
+            this.cmdSmtp.Name = "cmdSmtp";
+            this.cmdSmtp.Size = new System.Drawing.Size(446, 37);
+            this.cmdSmtp.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "SMTP Server:";
             // 
             // menuStrip2
             // 
@@ -210,26 +318,29 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(276, 41);
             this.toolStripMenuItem1.Text = "Email Configurations";
             // 
-            // btnEmail
+            // btnClose
             // 
-            this.btnEmail.Location = new System.Drawing.Point(326, 193);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(233, 74);
-            this.btnEmail.TabIndex = 2;
-            this.btnEmail.Text = "test email";
-            this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+            this.btnClose.Location = new System.Drawing.Point(41, 913);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(145, 51);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // appConfigurations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1388, 872);
+            this.ClientSize = new System.Drawing.Size(1388, 994);
             this.Controls.Add(this.panelEmail);
             this.Controls.Add(this.panelLogs);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "appConfigurations";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "appConfigurations";
+            this.Load += new System.EventHandler(this.appConfigurations_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -261,9 +372,18 @@
         private System.Windows.Forms.ToolStripMenuItem loginLogsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem errorLogsToolStripMenuItem;
         private System.Windows.Forms.Panel panelEmail;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.ComboBox cmdSmtp;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCompany;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnClose;
     }
 }

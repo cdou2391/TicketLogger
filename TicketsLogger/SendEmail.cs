@@ -42,27 +42,22 @@ namespace TicketsLogger
                         {
                             SqlDataReader reader2 = cmd2.ExecuteReader();
                             reader2.Read();
-                            string inputPassword="";
                             string clientOrgName = reader2["name"].ToString();
-                            //string orgEmail = "rugced23@gmail.com"; reader2["email"].ToString();
-                            //var toAddress2 = new MailAddress(orgEmail, "From " + clientOrgName);
-                            //var toAddress3 = new MailAddress(client, "From " + clientOrgName);
-                            if (inputBox.InputBox("Password", "Enter password:", ref inputPassword) == DialogResult.OK)
-                            {
-                                //MessageBox.Show(value);
-                                //string fromPassword = inputPassword;
-                            }
-                            
-                            var toAddress = new MailAddress("rugced232gmail.com", "");
+                            string orgEmail = "rugced23@gmail.com"; reader2["email"].ToString();
+                            var toAddress2 = new MailAddress(orgEmail, "From " + clientOrgName);
+                            var toAddress3 = new MailAddress(client, "From " + clientOrgName);
+                            string fromPassword = Properties.Settings.Default.password;
+
+                            var toAddress = new MailAddress("rugced23@gmail.com", "rugced23@gmail.com");
                             string subject = "New Ticket";
                             string body;
                             body = (msgIntro+"\r\nTicket Number: " + referenceNum 
                                   + "\r\nCall Type: " + callT +"\r\nCall Description: " + callDesc 
                                   + "\r\nCall Status: " + callStat + "\r\nCall Priority: "+ callPrior);
-                            string smtpServer = Properties.Settings.Default.smtpGmail;
+                            string smtpServer = Properties.Settings.Default.smtp;
                             try
                             {
-                                smtpServer = Properties.Settings.Default.smtpGmail;
+                                smtpServer = Properties.Settings.Default.smtp;
                             }
                             catch(Exception ex)
                             {
@@ -77,7 +72,7 @@ namespace TicketsLogger
                                     Port = 587,
                                     EnableSsl = true,
                                     DeliveryMethod = SmtpDeliveryMethod.Network,
-                                    Credentials = new NetworkCredential(fromAddress, inputPassword),
+                                    Credentials = new NetworkCredential(fromAddress, fromPassword),
                                     Timeout = 20000
                                 };
                                 using (var message1 = new MailMessage(fromAddress, "rugced23@gmail.com")
@@ -93,11 +88,11 @@ namespace TicketsLogger
                                     try
                                     {
                                         smtp.Send(message1);
-                                        MessageBox.Show("Email to " + toAddress + " was succesfully sent!");
+                                        MessageBox.Show("Email to " + toAddress + " was succesfully sent!" + smtp.Credentials);
                                     }
                                     catch (Exception ex)
                                     {
-                                        MessageBox.Show("Email to " + toAddress + " was no sent! \nError: " + ex.Message);
+                                        MessageBox.Show("Email to " + toAddress + " was no sent! \nError: " + ex.Message + fromAddress + fromPassword);
                                         new LogWriter(ex);
                                     }
                                 }

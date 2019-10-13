@@ -23,39 +23,51 @@ namespace TicketsLogger.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("smtp.office365.com")]
-        public string smtpOffice365 {
-            get {
-                return ((string)(this["smtpOffice365"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
-        public string smtpGmail {
+        public string smtp {
             get {
-                return ((string)(this["smtpGmail"]));
+                return ((string)(this["smtp"]));
+            }
+            set {
+                this["smtp"] = value;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("rugambacedric@gmail.com")]
         public string emailAddress {
             get {
                 return ((string)(this["emailAddress"]));
             }
+            set {
+                this["emailAddress"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("lbjames2391")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lbjames@2391")]
         public string password {
             get {
                 return ((string)(this["password"]));
+            }
+            set {
+                this["password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Bank of Kigali")]
+        public string company {
+            get {
+                return ((string)(this["company"]));
+            }
+            set {
+                this["company"] = value;
             }
         }
     }
