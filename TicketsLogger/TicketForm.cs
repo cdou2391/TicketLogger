@@ -104,6 +104,7 @@ namespace TicketsLogger
                         staffNumber.Text = reader["name"].ToString() +" " +reader["surname"].ToString();
                         recComboAssignedTo.Items.Add(staffEmail);
                         recComboUnikNo.Items.Add(staffNumber);
+                        clsEscalatedTo.Items.Add(staffEmail);
                     }
                     reader.Close();
                 }
@@ -205,6 +206,7 @@ namespace TicketsLogger
             string callAssignedBy = staffNames.Text;
             string callDescription = recTxtCallDescription.Text;
             string callSubmitedBy = recComboUnikNo.Text;
+            string callName = recTxtTicketName.Text;
 
             string techEmail = recComboAssignedTo.Text;
             //string clientEmail = recTxtEmail.Text;
@@ -238,9 +240,11 @@ namespace TicketsLogger
                     using (SqlConnection conn = new SqlConnection(DatabaseConnection.connectionStr))
                     {
                         conn.Open();
-                        using (SqlCommand cmd = new SqlCommand("INSERT INTO Tickets(TicketNumber,Type,CreatedBy,Priority,Description,CreatedDate,Status,ClosedDate,AssignedTo,SubmitedBy) VALUES(@TicketNumber,@Type,@CreatedBy,@Priority,@Description,@CreatedDate,@Status,@ClosedDate,@AssignedTo,@SubmitedBy) ", conn))
+                        using (SqlCommand cmd = new SqlCommand("INSERT INTO Tickets(TicketNumber,TicketName,Type,CreatedBy,Priority,Description,CreatedDate,Status,ClosedDate,AssignedTo,SubmitedBy) " +
+                            "VALUES(@TicketNumber,@TicketName,@Type,@CreatedBy,@Priority,@Description,@CreatedDate,@Status,@ClosedDate,@AssignedTo,@SubmitedBy) ", conn))
                         {
                             cmd.Parameters.AddWithValue("@TicketNumber", TicketNum);
+                            cmd.Parameters.AddWithValue("@TicketName", callName);
                             cmd.Parameters.AddWithValue("@Type", callType);
                             cmd.Parameters.AddWithValue("@AssignedTo", callAssignedTo);
                             cmd.Parameters.AddWithValue("@CreatedBy", callAssignedBy);
@@ -258,7 +262,7 @@ namespace TicketsLogger
                             {
                                 sendE.sendEmail(Global.Staff.Email,
                                 "rugced@yahoo.fr", "rugambacedric@gmail.com", "Rugamba Cedric",
-                                "Ticket", TicketNum, callType,
+                                "Ticket", TicketNum, callType, callName,
                                 callStatus, callPriority, emailMsg);
                             }
                             Thread thread = new Thread(threadStart);
@@ -394,7 +398,7 @@ namespace TicketsLogger
                         {
                             sendE.sendEmail(Global.Staff.Email,
                             escalatedTo, "rugced23@gmail.com", "",
-                            closureReason, ticketNum, callType,
+                            closureReason, ticketNum, callType, "Name",
                             callStatus, "", emailMsg);
                         }
                         Thread thread = new Thread(threadStart);

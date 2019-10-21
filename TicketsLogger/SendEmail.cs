@@ -11,7 +11,8 @@ namespace TicketsLogger
     class SendEmail
     {
         public string sendEmail(string sender, string receiver1, string receiver2, string clientName, 
-                                string callMessage, string referenceNum,string callType, string callStatus, 
+                                string callMessage, string referenceNum,string callType, string callName,
+                                string callStatus, 
                                 string callPriority,string introMsg)
         {
             string staff = sender;
@@ -20,6 +21,7 @@ namespace TicketsLogger
             string clientNames = clientName;
             string callDesc = callMessage;
             string callT = callType;
+            string callN = callName;
             string callStat = callStatus;
             string refNum = referenceNum;
             string message = "";
@@ -52,8 +54,19 @@ namespace TicketsLogger
                             string subject = "New Ticket";
                             string body;
                             body = (msgIntro+"\r\nTicket Number: " + referenceNum 
-                                  + "\r\nCall Type: " + callT +"\r\nCall Description: " + callDesc 
-                                  + "\r\nCall Status: " + callStat + "\r\nCall Priority: "+ callPrior);
+                                  +"\r\nTicket Type: " + callName
+                                  + "\r\nTicket Type: " + callT +"\r\nTicket Description: " + callDesc 
+                                  + "\r\nTicket Status: " + callStat + "\r\nTicket Priority: " + callPrior);
+                            string body2;
+                            body2 = (msgIntro + "\r\nTicket Number: " + referenceNum
+                                  + "\r\nTicket Type: " + callName
+                                  + "\r\nTicket Type: " + callT + "\r\nTicket Description: " + callDesc
+                                  + "\r\nTicket Status: " + callStat + "\r\nTicket Priority: " + callPrior);
+                            string body3;
+                            body3 = (msgIntro + "\r\nTicket Number: " + referenceNum
+                                  + "\r\nTicket Type: " + callName
+                                  + "\r\nTicket Type: " + callT + "\r\nTicket Description: " + callDesc
+                                  + "\r\nTicket Status: " + callStat + "\r\nTicket Priority: " + callPrior);
                             string smtpServer = Properties.Settings.Default.smtp;
                             try
                             {
@@ -61,6 +74,7 @@ namespace TicketsLogger
                             }
                             catch(Exception ex)
                             {
+                                new LogWriter(ex);
                                 MessageBox.Show("Please specify the mail server and save!");
                             }
                             finally
@@ -80,6 +94,16 @@ namespace TicketsLogger
                                     Subject = subject,
                                     Body = body,
                                 })
+                                using (var message2 = new MailMessage(fromAddress, "rugced23@gmail.com")
+                                {
+                                    Subject = subject,
+                                    Body = body,
+                                })
+                                using (var message3 = new MailMessage(fromAddress, "rugced23@gmail.com")
+                                {
+                                    Subject = subject,
+                                    Body = body,
+                                })
                                 {
                                     ServicePointManager.ServerCertificateValidationCallback =
                                                     delegate (object s, X509Certificate certificate,
@@ -88,35 +112,31 @@ namespace TicketsLogger
                                     try
                                     {
                                         smtp.Send(message1);
-                                        MessageBox.Show("Email to " + toAddress + " was succesfully sent!" + smtp.Credentials);
+                                        MessageBox.Show("Email to " + toAddress + " was succesfully sent!");
                                     }
                                     catch (Exception ex)
                                     {
-                                        MessageBox.Show("Email to " + toAddress + " was no sent! \nError: " + ex.Message + fromAddress + fromPassword);
+                                        MessageBox.Show("Email to " + toAddress + " was no sent! \nError: ");
                                         new LogWriter(ex);
                                     }
+                                    try
+                                    {
+                                        smtp.Send(message2);
+                                        MessageBox.Show("Email to " + toAddress2 + " was succesfully sent!");
+                                    }
+                                    catch (Exception ex)
+                                    { MessageBox.Show("Email to rec2" + toAddress2 + " was no sent! \nError: " + ex.Message); }
+                                    try
+                                    {
+                                        smtp.Send(message3);
+                                        MessageBox.Show("Email to " + toAddress3 + " was succesfully sent!");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Email to rec3" + toAddress3 + " was no sent! \nError: " + ex.Message);
+                                    }
+                                    message = ("All emails succesfully sent");
                                 }
-                            
-
-                            
-                            
-                            //try
-                            //{
-                            //    smtp.Send(message2);
-                            //    MessageBox.Show("Email to " + toAddress2 + " was succesfully sent!");
-                            //}
-                            //catch (Exception ex)
-                            //{ MessageBox.Show("Email to rec2" + toAddress2 + " was no sent! \nError: " + ex.Message); }
-                            //try
-                            //{
-                            //    smtp.Send(message3);
-                            //    MessageBox.Show("Email to " + toAddress3 + " was succesfully sent!");
-                            //}
-                            //catch (Exception ex)
-                            //{
-                            //    MessageBox.Show("Email to rec3" + toAddress3 + " was no sent! \nError: " + ex.Message);
-                            //}
-                            message = ("All emails succesfully sent");
                             }
                         }
                     }

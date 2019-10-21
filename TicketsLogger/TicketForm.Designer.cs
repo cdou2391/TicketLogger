@@ -91,6 +91,8 @@
             this.closeComboUnikNo = new System.Windows.Forms.ComboBox();
             this.label54 = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.closeTxtStatus = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.closeTxtSubmitedBy = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.closeTxtDescription = new System.Windows.Forms.TextBox();
@@ -106,8 +108,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.closeBtnExit = new System.Windows.Forms.Button();
             this.closeBtnSave = new System.Windows.Forms.Button();
-            this.closeTxtStatus = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.recTxtTicketName = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Tab1.SuspendLayout();
@@ -134,6 +137,7 @@
             this.groupBox16.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -275,6 +279,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.panel5);
             this.panel7.Controls.Add(this.panel17);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.recComboPriority);
@@ -328,9 +333,9 @@
             this.panel8.Controls.Add(this.recTxtCallDescription);
             this.panel8.Controls.Add(this.panel4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 166);
+            this.panel8.Location = new System.Drawing.Point(0, 260);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(948, 391);
+            this.panel8.Size = new System.Drawing.Size(948, 297);
             this.panel8.TabIndex = 11;
             // 
             // recTxtCallDescription
@@ -338,10 +343,10 @@
             this.recTxtCallDescription.BackColor = System.Drawing.SystemColors.Control;
             this.recTxtCallDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recTxtCallDescription.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recTxtCallDescription.Location = new System.Drawing.Point(0, 34);
+            this.recTxtCallDescription.Location = new System.Drawing.Point(0, 39);
             this.recTxtCallDescription.Multiline = true;
             this.recTxtCallDescription.Name = "recTxtCallDescription";
-            this.recTxtCallDescription.Size = new System.Drawing.Size(948, 357);
+            this.recTxtCallDescription.Size = new System.Drawing.Size(948, 258);
             this.recTxtCallDescription.TabIndex = 0;
             // 
             // panel4
@@ -352,7 +357,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(948, 34);
+            this.panel4.Size = new System.Drawing.Size(948, 39);
             this.panel4.TabIndex = 3;
             // 
             // label35
@@ -871,6 +876,25 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Ticket Information";
             // 
+            // closeTxtStatus
+            // 
+            this.closeTxtStatus.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeTxtStatus.Location = new System.Drawing.Point(699, 34);
+            this.closeTxtStatus.Name = "closeTxtStatus";
+            this.closeTxtStatus.ReadOnly = true;
+            this.closeTxtStatus.Size = new System.Drawing.Size(184, 25);
+            this.closeTxtStatus.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(639, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 18);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Status:";
+            // 
             // closeTxtSubmitedBy
             // 
             this.closeTxtSubmitedBy.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1029,24 +1053,31 @@
             this.closeBtnSave.UseVisualStyleBackColor = false;
             this.closeBtnSave.Click += new System.EventHandler(this.closeBtnSave_Click);
             // 
-            // closeTxtStatus
+            // panel5
             // 
-            this.closeTxtStatus.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeTxtStatus.Location = new System.Drawing.Point(699, 34);
-            this.closeTxtStatus.Name = "closeTxtStatus";
-            this.closeTxtStatus.ReadOnly = true;
-            this.closeTxtStatus.Size = new System.Drawing.Size(184, 25);
-            this.closeTxtStatus.TabIndex = 12;
+            this.panel5.Controls.Add(this.recTxtTicketName);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 213);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(948, 47);
+            this.panel5.TabIndex = 12;
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(639, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 18);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Status:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 18);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Ticket name:";
+            // 
+            // recTxtTicketName
+            // 
+            this.recTxtTicketName.Location = new System.Drawing.Point(107, 13);
+            this.recTxtTicketName.Name = "recTxtTicketName";
+            this.recTxtTicketName.Size = new System.Drawing.Size(212, 25);
+            this.recTxtTicketName.TabIndex = 1;
             // 
             // TicketForm
             // 
@@ -1102,6 +1133,8 @@
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1188,5 +1221,8 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.TextBox closeTxtStatus;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox recTxtTicketName;
+        private System.Windows.Forms.Label label4;
     }
 }

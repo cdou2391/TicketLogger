@@ -130,7 +130,7 @@ namespace TicketsLogger
             {
                 sendE.sendEmail(Global.Staff.Email,
                 "rugced@yahoo.fr", "", "",
-                "status 1", "1111", "Incident",
+                "status 1", "1111", "Incident","",
                 "Open", "", emailMsg);
             }
             Thread thread = new Thread(threadStart);
